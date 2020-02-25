@@ -1,1 +1,16 @@
 /* 색깔 대따 많이 모아둔 곳 https://www.w3schools.com/cssref/css_colors.asp */
+
+/* CSS 모음 */
+a, a:visited {
+    color:#222;         /* 글자색 */
+    text-decoration: none;      /* 밑줄 없앰 */
+}
+
+#sns > ul {
+    padding-left: 0;        /* 목록 들여쓰지 않기 */
+}
+
+#sns > ul > li {
+    display:inline-block;       /* 항목을 가로로 배열 */
+    width:80px;         /* 각 항목의 너비 */
+}
