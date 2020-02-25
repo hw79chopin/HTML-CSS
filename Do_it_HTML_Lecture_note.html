@@ -32,7 +32,7 @@ entity code 뒤에는 ;을 꼭 붙여야 한다!
 
 <!-- 웹 문서 만들고 업로드하기-->
 <!-- 무료 호스팅은 dothome.co.kr에서!
-FTP(File Transfer Protoocol) 프로그램: 서버에 파일을 올리고 내릴 때 사용하는 프로그램. 여기서는 FileZilla를 사용할 것임
+FTP(File Transfer Protoocol) 프로그램: 서버에 파일을 올리고 내릴 때 사용하는 프로그램. 이 책에서는 FileZilla를 사용할 것임
 문서를 모든 사람이 볼 수 있게 하려면 웹 서버에 올려 놓아야 함
 -->
 
@@ -45,7 +45,7 @@ FTP(File Transfer Protoocol) 프로그램: 서버에 파일을 올리고 내릴 
 <p> </p>        <!-- 단락 만들기-->
 <br>            <!-- 줄 바꾸기-->
 <hr>            <!-- 수평 줄 넣기-->
-<blockquote></blockquote>       <!-- 인용문 넣기-->
+<blockquote> </blockquote>       <!-- 인용문 넣기-->
 <pre> </pre>        <!-- 입력하는 그대로 화면에 표시하기-->
 <strong> </strong> <b> </b>       <!-- 굵게 표시하기, <strong> 태그는 여러 개 쓸 수 있음-->
 <em> </em>  <i> </i>        <!-- 이탤릭체로 표시하기-->
@@ -78,3 +78,188 @@ FTP(File Transfer Protoocol) 프로그램: 서버에 파일을 올리고 내릴 
     <dd> </dd>
 </dl>          <!-- 설명 목록 만들기
 <dl>은 목록, <dt>는 제목, <dd>는 설명을 나타냄 -->
+
+
+
+
+
+<!-- 표를 만드는 태그-->
+<!-- -->
+<tr> </tr>        <!--행을 만드는 태그 -->
+<td> </td>        <!--열을 만드는 태그 -->
+<th> </th>        <!--표에 제목 셀을 만들기
+                    colspan 속성: 행 합치기 
+                    rowspan 속성: 열 합치기 -->
+<caption> </caption>            <!--표 제목 붙이기 --> 
+<figcaption> </figcaption>      <!--표에 제목 붙이기 -->
+<thead> </thead>            <!--표 구조 정의하기, 제목부분 -->
+<tbody> </tbody>            <!--표 구조 정의하기, 본문부분 -->
+<tfoot> </tfoot>            <!--표 구조 정의하기, 요약부분 -->
+<col>               <!--한 column에 모든 셀에 같은 스타일을 적용할 때 사용, 닫는 태그 없음
+                        span attribute를 사용해서 몇 개를 함께 묶을 수도 있다. -->
+<colgroup> </colgroup>          <!--여러 columns들을 묶어 스타일 적용. caption 태그 뒤, tr,td 태그 전에 사용해야 함
+                                colgroup 내에 사용한 col 태그의 개수와 표의 column의 개수가 같아야 함-->
+
+
+<!-- 기본형-->
+<td colspan="합칠 셀의 개수"> 내용 </td>
+<th colspan="합칠 셀의 개수"> 내용 </th>
+<td rowspan="합칠 셀의 개수"> 내용 </td>
+<th rowspan="합칠 셀의 개수"> 내용 </th>
+
+<table>
+    <tr>
+        <td> 내용</td>
+        <td> 내용</td>
+    </tr>
+</table>
+
+<!-- colspan, rowspan 활용-->
+<table>
+    <tr>
+        <th>이름</th>
+        <td></td>
+        <th>연락처</th>
+        <td></td>
+    </tr>
+    <tr>
+        <th>주소</th>
+        <td colspan="3"></td>
+    </tr>
+    <tr>
+        <th>자기소개</th>
+        <td colspan="3"></td>
+    </tr>
+</table>
+
+<!-- caption 활용-->
+<table>
+    <caption>
+        <strong>하룡이는 꿀꿀이</strong> 
+        <p>리빙스톤에 자주 출몰하는 하룡뿌</p>
+    </caption>
+    <tr>
+        <th>출몰지역</th>
+        <th>목격시간</th>
+        <th>특이사항</th>
+    </tr>
+</table>
+
+<!-- thead, tbody, tfoot-->
+<thead>
+    <tr> </tr>
+</thead>
+<tbody> 
+    <tr> </tr>
+</tbody>
+<tfoot>
+    <tr></tr> 
+</tfoot>
+
+<!-- col, colgroup-->
+<table>
+    <caption>colgroup 연습</caption> 
+    <colgroup>
+        <col>
+        <col span='2' style="background-color: blue;">
+        <col style="background-color: yellow;">
+    </colgroup>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+
+
+
+
+<!-- 이미지와 링크-->
+<img>           <!-- 이미지 삽입하기
+                    src 속성: 이미지 경로를 입력
+                    alt 속성: 설명 텍스트 삽입
+                    width, height: 크기 조정-->
+<figure> </figure>        <!-- 설명 글을 붙일 대상 지정, 웹 문서 안에서 한 위가 되는 요소를 묶을 때 사용-->
+<figcaption> </figcaption>          <!-- 설명 글 붙이기-->
+<a > </a>             <!-- 링크 만들기
+                        href: 링크한 문서, 주소를 입력
+                            "#앵커이름" : 앵커 만들기. 페이지가 긴 웹 문서에서 특정 요소를 클릭하면 그 위치로 한 번에 이동하게 함
+                        target: 링크 내용이 표시될 위치(현재 창 or 새 창)을 지정
+                            _blank: 링크 내용이 새 창, 새 탭에서 열림
+                            _self: default값. 링크가 있는 화면에서 열림
+                            _parent: 링크 내용을 부모 프레임에 표시
+                            _top: 프레임에서 벗어나 링크 내용을 전체 화면에 표시
+                        download: 링크한 내용을 다운로드함
+                        rel: 현재 문서와 링크한 문서의 관계를 알려줌
+                        hreflang:   링크한 문서의 언어를 지정
+                        type: 링크한 문서의 파일 유형을 알려줌 -->
+<map> </map>        <!-- 이미지맵: 한 이미지상에서 클릭 위치에 따라서 다른 링크 열기
+                            기본형은 <map> 태그로 이미지맵을 만들고 <img> 내 usemap 속성으로 이미지맵 지정-->                          
+<area>          <!-- 이미지맵으로 사용할 이미지에 영역을 표시할 때 사용
+                    alt: 대체 텍스트를 지정
+                    coords: 영역을 시작 좌표, 끝 좌표를 이용해 지정
+                    download: 링크 문서를 다운로드
+                    href: 링크 문서 경로를 지정
+                    media: 어떤 미디어에서 최적화시킬지 지정
+                    rel: 현재 문서와 링크 문서의 관계를 지정
+                        Iternate, bookmark, help, license, next, nofollow, noreferer, prefetch, prev, search, tag
+                    shape: 영역의 형태를 지정
+                        default, rect, circle, poly
+                    target: 링크로 표시할 대상을 지정   
+                        _blank, _parent, _self, _top, 프레임이름
+                    type: 링크 문서의 미디어 유형을 지정-->
+<!-- SVG: SVG는벡터 이미지로 크기 변동이 있어도 원래 상태를 유지함. 일러스트에서 만들 수 있음 -->
+
+
+<!-- 링크의 색깔을 없애기-, </head>태그 전에 삽입-->
+<style>
+    a {
+        text-decoration: none;
+        color: black
+    }
+</style>            
+
+<!-- figure 활용-->
+<figure>
+    <img src="images/hi.jpg" alt="안녕 모두들">
+    <figcaption> 안녕 모두들</figcaption>
+</figure>
+
+<!-- 링크 만들기-->
+<h1>갑시다 혀누의 github으로</h1>
+<a href="https://github.com/hw79chopin">혀누의 github</a>
+<h1>이미지로 만들어봅시다</h1>
+<a href="https:github.com/hw79chopin">
+    <img src="https://nesoy.github.io/assets/logo/github.png">
+</a>
+
+<!-- 앵커 예시-->
+<ul id="혀누의 살생부">
+    <li><a href="#민들레">민들리</a></li>
+    <li><a href="#당덩윤">당덩윤</a></li>
+    <li><a href="#기망우">기망우</a></li>
+</ul>
+<h2 id="민들레">민들레에 대해 알아보자</h2>
+<p>민들레는 머리가 없다. 찾기 쉬움</p>
+<p><a href="#혀누의 살생부"></a></p>
+<h2 id="당덩윤">당덩윤에 대해 알아보자</h2>
+<p>당덩윤은 여자가 많다. 찾기 쉬움</p>
+<p><a href="#혀누의 살생부"></a></p>
+<h2 id="기망우">기망우에 대해 알아보자</h2>
+<p>기망우는 신혼인 것 같다. 집에 안 들어간다. 찾기 어려움</p>
+<p><a href="#혀누의 살생부"></a></p>
+
+<!-- 이미지맵 예시-->
+<img src="images/kids.jpg" alt="" usemap="#favorites">
+<map name="favorites">
+    <area shape="rect" coords="10,10,160,200" href="https://github.com/hw79chopin" target="_blank">
+    <area shape="rect" coords="200,10,380,200" href="https://github.com/etture" target="_blank">
+</map>
