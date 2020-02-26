@@ -19,6 +19,8 @@
 
 
 
+
+
 <!-- 웹 문서에 특수 문자, 기호 사용하기
 https://dev.w3.org/html5/html-author/charref 여기에 가면 entity code가 다 나옴
 entity code 뒤에는 ;을 꼭 붙여야 한다!
@@ -30,11 +32,15 @@ entity code 뒤에는 ;을 꼭 붙여야 한다!
 
 
 
+
+
 <!-- 웹 문서 만들고 업로드하기-->
 <!-- 무료 호스팅은 dothome.co.kr에서!
 FTP(File Transfer Protoocol) 프로그램: 서버에 파일을 올리고 내릴 때 사용하는 프로그램. 이 책에서는 FileZilla를 사용할 것임
 문서를 모든 사람이 볼 수 있게 하려면 웹 서버에 올려 놓아야 함
 -->
+
+
 
 
 
@@ -67,12 +73,15 @@ FTP(File Transfer Protoocol) 프로그램: 서버에 파일을 올리고 내릴 
 
 
 
+
+
+
 <!-- 목록을 만드는 태그-->
 <ul> <li> </li> </ul>       <!-- 순서 없는 목록 만들기-->
-<ol> <li> </li> </ol>       <!-- 순서 목록 만들기-->    <!-- 
-    type 속성: 1-숫자, a-영문 소문자, A-영문 대문자, i-로마숫자 소문자, I-로마숫자 대문자
-    start 속성: 중간 번호부터 시작 가능
-    reversed: 역순으로 표시     -->
+<ol> <li> </li> </ol>       <!-- 순서 목록 만들기-->
+    <ol type="">        <!-- type 속성: 1-숫자, a-영문 소문자, A-영문 대문자, i-로마숫자 소문자, I-로마숫자 대문자 -->
+    <ol start="숫자">       <!-- start 속성: 중간 번호부터 시작 가능-->
+    <ol reversed>       <!--역순으로 표시-->
 <dl> 
     <dt> </dt>
     <dd> </dd>
@@ -83,20 +92,24 @@ FTP(File Transfer Protoocol) 프로그램: 서버에 파일을 올리고 내릴 
 
 
 
+
+
+
+
 <!-- 표를 만드는 태그-->
 <!-- -->
 <tr> </tr>        <!--행을 만드는 태그 -->
 <td> </td>        <!--열을 만드는 태그 -->
-<th> </th>        <!--표에 제목 셀을 만들기
-                    colspan 속성: 행 합치기 
-                    rowspan 속성: 열 합치기 -->
+<th> </th>        <!--표에 제목 셀을 만들기 -->
+     <th colspan="숫자"></th>       <!-- colspan 속성: 행 합치기 -->
+     <th rowspan="숫자"></th>       <!-- colspan 속성: 열 합치기 -->
 <caption> </caption>            <!--표 제목 붙이기 --> 
 <figcaption> </figcaption>      <!--표에 제목 붙이기 -->
 <thead> </thead>            <!--표 구조 정의하기, 제목부분 -->
 <tbody> </tbody>            <!--표 구조 정의하기, 본문부분 -->
 <tfoot> </tfoot>            <!--표 구조 정의하기, 요약부분 -->
-<col>               <!--한 column에 모든 셀에 같은 스타일을 적용할 때 사용, 닫는 태그 없음
-                        span attribute를 사용해서 몇 개를 함께 묶을 수도 있다. -->
+<col>               <!--한 column에 모든 셀에 같은 스타일을 적용할 때 사용, 닫는 태그 없음 -->
+    <col span="숫자">       <!--span 속성를 사용해서 몇 개를 함께 묶을 수도 있다. -->
 <colgroup> </colgroup>          <!--여러 columns들을 묶어 스타일 적용. caption 태그 뒤, tr,td 태그 전에 사용해야 함
                                 colgroup 내에 사용한 col 태그의 개수와 표의 column의 개수가 같아야 함-->
 
@@ -182,40 +195,49 @@ FTP(File Transfer Protoocol) 프로그램: 서버에 파일을 올리고 내릴 
 
 
 
+
+
+
+
+
+
 <!-- 이미지와 링크-->
-<img>           <!-- 이미지 삽입하기
-                    src 속성: 이미지 경로를 입력
-                    alt 속성: 설명 텍스트 삽입
-                    width, height: 크기 조정-->
+<img>           <!-- 이미지 삽입하기 -->
+    <img src="주소" alt="설명" width="숫자px" height="숫자px"> <!--
+            src 속성: 이미지 경로를 입력
+            alt 속성: 설명 텍스트 삽입
+            width, height속성: 크기 조정-->
 <figure> </figure>        <!-- 설명 글을 붙일 대상 지정, 웹 문서 안에서 한 위가 되는 요소를 묶을 때 사용-->
 <figcaption> </figcaption>          <!-- 설명 글 붙이기-->
-<a > </a>             <!-- 링크 만들기
-                        href: 링크한 문서, 주소를 입력
-                            "#앵커이름" : 앵커 만들기. 페이지가 긴 웹 문서에서 특정 요소를 클릭하면 그 위치로 한 번에 이동하게 함
-                        target: 링크 내용이 표시될 위치(현재 창 or 새 창)을 지정
-                            _blank: 링크 내용이 새 창, 새 탭에서 열림
-                            _self: default값. 링크가 있는 화면에서 열림
-                            _parent: 링크 내용을 부모 프레임에 표시
-                            _top: 프레임에서 벗어나 링크 내용을 전체 화면에 표시
-                        download: 링크한 내용을 다운로드함
-                        rel: 현재 문서와 링크한 문서의 관계를 알려줌
-                        hreflang:   링크한 문서의 언어를 지정
-                        type: 링크한 문서의 파일 유형을 알려줌 -->
+<a> </a>             <!-- 링크 만들기-->
+    <a href="주소" target="텍스트"" rel="텍스트" hreflang="텍스트" type="텍스트" download></a>       <!--
+        href 속성: 링크한 문서, 주소를 입력
+            "#앵커이름" : 앵커 만들기. 페이지가 긴 웹 문서에서 특정 요소를 클릭하면 그 위치로 한 번에 이동하게 함
+        target 속성: 링크 내용이 표시될 위치(현재 창 or 새 창)을 지정
+            _blank: 링크 내용이 새 창, 새 탭에서 열림
+            _self: default값. 링크가 있는 화면에서 열림
+            _parent: 링크 내용을 부모 프레임에 표시
+            _top: 프레임에서 벗어나 링크 내용을 전체 화면에 표시
+        download 속성: 링크한 내용을 다운로드함
+        rel 속성: 현재 문서와 링크한 문서의 관계를 알려줌
+        hreflang 속성: 링크한 문서의 언어를 지정
+        type 속성: 링크한 문서의 파일 유형을 알려줌 -->
 <map> </map>        <!-- 이미지맵: 한 이미지상에서 클릭 위치에 따라서 다른 링크 열기
                             기본형은 <map> 태그로 이미지맵을 만들고 <img> 내 usemap 속성으로 이미지맵 지정-->                          
-<area>          <!-- 이미지맵으로 사용할 이미지에 영역을 표시할 때 사용
-                    alt: 대체 텍스트를 지정
-                    coords: 영역을 시작 좌표, 끝 좌표를 이용해 지정
-                    download: 링크 문서를 다운로드
-                    href: 링크 문서 경로를 지정
-                    media: 어떤 미디어에서 최적화시킬지 지정
-                    rel: 현재 문서와 링크 문서의 관계를 지정
-                        Iternate, bookmark, help, license, next, nofollow, noreferer, prefetch, prev, search, tag
-                    shape: 영역의 형태를 지정
-                        default, rect, circle, poly
-                    target: 링크로 표시할 대상을 지정   
-                        _blank, _parent, _self, _top, 프레임이름
-                    type: 링크 문서의 미디어 유형을 지정-->
+<area>          <!-- 이미지맵으로 사용할 이미지에 영역을 표시할 때 사용 --> 
+    <area alt="텍스트" coords="좌표,좌표,좌표,좌표" href="경로" media="텍스트" rel="텍스트" shape="텍스트" target="텍스트" type="텍스트" download>         <!--
+        alt 속성: 대체 텍스트를 지정
+        coords 속성: 영역을 시작 좌표, 끝 좌표를 이용해 지정
+        download 속성: 링크 문서를 다운로드
+        href 속성: 링크 문서 경로를 지정
+        media 속성: 어떤 미디어에서 최적화시킬지 지정
+        rel 속성: 현재 문서와 링크 문서의 관계를 지정
+            Iternate, bookmark, help, license, next, nofollow, noreferer, prefetch, prev, search, tag
+        shape 속성: 영역의 형태를 지정
+            default, rect, circle, poly
+        target 속성: 링크로 표시할 대상을 지정   
+            _blank, _parent, _self, _top, 프레임이름
+        type 속성: 링크 문서의 미디어 유형을 지정-->
 <!-- SVG: SVG는벡터 이미지로 크기 변동이 있어도 원래 상태를 유지함. 일러스트에서 만들 수 있음 -->
 
 
@@ -263,3 +285,104 @@ FTP(File Transfer Protoocol) 프로그램: 서버에 파일을 올리고 내릴 
     <area shape="rect" coords="10,10,160,200" href="https://github.com/hw79chopin" target="_blank">
     <area shape="rect" coords="200,10,380,200" href="https://github.com/etture" target="_blank">
 </map>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 폼-->
+<form> </form>          <!-- form을 만드는 기본 태그-->
+    <form method="텍스트" name="텍스트" action="텍스트" target="경로" autocomplete="on"> </form>                  <!--
+        method 속성: input을 어떻게 서버에 넘길지 지정
+            get: 주소 표시줄에 input이 그대로 드러남. 256~4096byte까지만 넘길 수 있음
+            post: 대부분이 이 방식 사용. standard input으로 넘겨주기 때문에 제한 x, 내용 노출 x
+        name 속성: form의 이름을 지정
+        action 속성: 태그 안의 내용을 처리할 서버 상의 프로그램을 지정
+        target 속성: <action>에서 지정한 파일을 다른 위치에 열도록 지정
+        autocomplete 속성: 자동완성 기능, default=on-->
+<label> </label>          <!-- <label> 태그를 사용하면 form 요소와 레이블 텍스트가 서로 연결되있음을 브라우저가 앎, 텍스트만 터치해도 버튼, 체크박스가 선택되게 만들 수 있음-->
+    <label for="텍스트"> </label>
+<fieldset> </fieldset>         <!-- 하나의 폼 안에서 여러 구역을 나누어 표시할 때 사용, <fieldset> 태그 사이의 폼들을 하나의 영역으로 묶고 외곽선을 그려줌-->
+<legend> </legend>          <!-- 하나의 폼 안에서 여러 구역을 나누어 표시할 때 사용, <fieldset> 태그로 묶은 그룹에 제목을 붙여줌-->
+<input>             <!-- 입력할 때 사용 (필드삽입, 버튼 삽입)-->
+    <input type="" id="잘 활용할 것" size="10">       <!-- size 속성: 필드의 길이를 지정하는 속성-->
+    <input type="hidden" id="텍스트" name="텍스트" value="텍스트">           <!-- 사용자에게는 보이지 않지만 서버로 넘져지는 값을 가짐-->
+    <input type="text" size="숫자" name="" value="기본으로 띄울 텍스트" maxlength="숫자">             <!-- 한 줄짜리 일반 텍스트를 입력하는 필드, name: 텍스트 필드를 구별하는 이름, size:-필드 길이를 지정, value: 필드 부분에 표시될 내용, maxlength: 최대 문자 개수-->
+    <input type="search">           <!-- 검색창 만들기-->
+    <input type="tel">          <!-- 전화번호 입력란 만들기-->
+    <input type="url">          <!-- URL 입력란 만들기-->
+    <input type="email">            <!-- 이메일 주소 입력란 만들기, 자동으로 이메일 형식에 맞는지 체크해야 함-->
+    <input type="password">         <!-- 비밀번호 입력란, value 속성 빼고 text 필드와 동일-->
+    <input type="time" min="" max="" step="" value="">         <!-- 시간을 지정할 때 사용step: 스핀 박스의 화살표를 누를 때마다 얼마나 조절할지 지정, value: 초기값을 지정-->
+    <input type="datetime" min="" max="" step="" value="">         <!-- 날짜와 시간을 함께 지정, step: 스핀 박스의 화살표를 누를 때마다 얼마나 조절할지 지정, value: 초기값을 지정-->
+    <input type="datetime-local" min="" max="" step="" value="">         <!-- 날짜와 시간을 함께 지정, step: 스핀 박스의 화살표를 누를 때마다 얼마나 조절할지 지정, value: 초기값을 지정-->
+    <input type="date">         <!-- 날짜를 선택-->
+            <!-- 예시 -->   <label><input type="date" id="start"></label>
+                            <label><input type="date" id="end"></label>
+    <input type="month">            <!-- 월과 연도를 선택--> 
+    <input type="week">         <!-- 주와 연도를 선택-->
+    <input type="number" min="숫자" max="숫자" value="숫자">           <!-- 입력값을 숫자로 인식한다. 브라우저에 따라 스핀박스가 설정되기도 함-->
+    <input type="range" min="숫자" max="숫자" step="숫자" value="초기값">            <!-- 슬라이드 막대로 숫자 지정, min: default는 0, max: defualt는 100, step: default는 1, 숫자 간격을 지정-->
+    <input type="radio" name="텍스트" value="영문, 숫자" checked>            <!-- 하나만 선택할 때, name: 구분하기 위한 이름, value: 서버로 알려줄 때 넘길 값을 지정, 필수 속성이고 영문 or 숫자이어야 함, checked: 기본으로 선택해 놓을 항목이 있을 때 사용-->
+    <input type="checkbox" name="텍스트" value="영문, 숫자" checked>         <!-- 여러 개 선택할 때, name: 구분하기 위한 이름, value: 서버로 알려줄 때 넘길 값을 지정, 필수 속성이고 영문 or 숫자이어야 함, checked: 기본으로 선택해 놓을 항목이 있을 때 사용-->     
+    <input type="color" value="#00ff00(이렇게)">            <!-- 색상 선택 상자 표시, 색상 값은 16진수로 표시-->
+    <input type="submit" value="버튼내용">           <!-- 서버에 전송 버튼-->
+    <input type="reset" value="버튼내용">            <!-- 리셋버튼 만들기-->
+    <input type="image" src="경로" alt="대체 텍스트">            <!-- 이미지 버튼 넣기, 원하는 이미지의 버튼을 만들 수 있다! -->
+            <!-- 예시-->    <input type="image" id="butt" src="경로" alt="login">     
+    <input type="button" value="버튼 내용" onclick="JS 함수 및 명령">           <!-- 버튼 넣기-->
+    <input type="file">         <!-- 파일 첨부하기-->
+
+<!-- <label> 예시-->
+<label for="user-id">아이디(6자 이상)</label>
+<input type="text" id="user-id">
+
+<!-- <label> 예시-->
+<form>
+    <h3>당덩윤에게 해당하는 것을 모두 고르시오</h3>
+    <ul>
+        <li>
+            <label><input type="radio" name="features" value="drunk">술꾼</label>
+        </li>
+        <li>
+            <label><input type="radio" name="features" value="lover">사랑꾼</label>
+        </li>
+        <li>
+            <label><input type="radio" name="features" value="doglover">댕댕꾼</label>
+        </li>
+    </ul>
+</form>
+
+<!-- <label> <input> 예시-->
+<form>
+    <fieldset>
+        <label>아이디: <input type="text" id="user_id" size="10"></label>
+        <label>비밀번호: <input type="password" id="user_pw" size="10"></label>
+        <input type="submit" value="로그인">
+    </fieldset>
+</form>
+
+<!-- <label> <fieldset> <legend> 예시-->
+<form>
+    <fieldset>
+    <legend>개인정보를 내놓아라~!</legend>>
+    <ul>
+        <li>
+            <label for="name">이름</label>
+            <input type="text" id="name">
+        </li>
+        <li>
+            <label for="phone">전화번호</label>
+            <input type="text" id="phone">
+        </li>
+    </ul>
+    </fieldset>
+</form>
+
+
