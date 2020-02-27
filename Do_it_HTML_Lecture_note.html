@@ -307,24 +307,29 @@ FTP(File Transfer Protoocol) 프로그램: 서버에 파일을 올리고 내릴 
         target 속성: <action>에서 지정한 파일을 다른 위치에 열도록 지정
         autocomplete 속성: 자동완성 기능, default=on-->
 <label> </label>          <!-- <label> 태그를 사용하면 form 요소와 레이블 텍스트가 서로 연결되있음을 브라우저가 앎, 텍스트만 터치해도 버튼, 체크박스가 선택되게 만들 수 있음-->
-    <label for="텍스트"> </label>
+<textarea> </textarea>      <!-- 메모를 할 수 있는 공간을 만듦-->
+    <textarea name="텍스트" cols="숫자" rows="숫자"> </textarea>        <!-- name: 텍스트 영역의 이름을 지정, cols: 가로 너비 지정-픽셀!, rows: 세로 길이 지정-줄-->
 <fieldset> </fieldset>         <!-- 하나의 폼 안에서 여러 구역을 나누어 표시할 때 사용, <fieldset> 태그 사이의 폼들을 하나의 영역으로 묶고 외곽선을 그려줌-->
 <legend> </legend>          <!-- 하나의 폼 안에서 여러 구역을 나누어 표시할 때 사용, <fieldset> 태그로 묶은 그룹에 제목을 붙여줌-->
 <input>             <!-- 입력할 때 사용 (필드삽입, 버튼 삽입)-->
     <input type="" id="잘 활용할 것" size="10">       <!-- size 속성: 필드의 길이를 지정하는 속성-->
     <input type="hidden" id="텍스트" name="텍스트" value="텍스트">           <!-- 사용자에게는 보이지 않지만 서버로 넘져지는 값을 가짐-->
-    <input type="text" size="숫자" name="" value="기본으로 띄울 텍스트" maxlength="숫자">             <!-- 한 줄짜리 일반 텍스트를 입력하는 필드, name: 텍스트 필드를 구별하는 이름, size:-필드 길이를 지정, value: 필드 부분에 표시될 내용, maxlength: 최대 문자 개수-->
+    <input type="text" size="숫자" name="" value="기본으로 띄울 텍스트" maxlength="숫자" minlength="숫자">             <!-- 한 줄짜리 일반 텍스트를 입력하는 필드, name: 텍스트 필드를 구별하는 이름, size:-필드 길이를 지정, value: 필드 부분에 표시될 내용, maxlength: 최대 문자 개수-->
+    <input type="text" id="텍스트" list="데이터목록이름!">             <!-- 한 줄짜리 일반 텍스트를 입력하는 필드, name: 텍스트 필드를 구별하는 이름, size:-필드 길이를 지정, value: 필드 부분에 표시될 내용, maxlength: 최대 문자 개수-->
+    <datalist id="데이터목록이름!"> 
+        <option value="" label=""> </option>            <!-- value: 서버로 넘겨질 값, label: 웹에 표시될 값, 지정하지 않으면 value값이 label-->
+    </datalist>             <!-- 데이터 목록을 만들 때는 이와 같이 사용!-->
     <input type="search">           <!-- 검색창 만들기-->
     <input type="tel">          <!-- 전화번호 입력란 만들기-->
     <input type="url">          <!-- URL 입력란 만들기-->
-    <input type="email">            <!-- 이메일 주소 입력란 만들기, 자동으로 이메일 형식에 맞는지 체크해야 함-->
+    <input type="email" multiple>            <!-- 이메일 주소 입력란 만들기, 자동으로 이메일 형식에 맞는지 체크해야 함, multiple: 두 개 이상의 값을 입력-->
     <input type="password">         <!-- 비밀번호 입력란, value 속성 빼고 text 필드와 동일-->
     <input type="time" min="" max="" step="" value="">         <!-- 시간을 지정할 때 사용step: 스핀 박스의 화살표를 누를 때마다 얼마나 조절할지 지정, value: 초기값을 지정-->
     <input type="datetime" min="" max="" step="" value="">         <!-- 날짜와 시간을 함께 지정, step: 스핀 박스의 화살표를 누를 때마다 얼마나 조절할지 지정, value: 초기값을 지정-->
     <input type="datetime-local" min="" max="" step="" value="">         <!-- 날짜와 시간을 함께 지정, step: 스핀 박스의 화살표를 누를 때마다 얼마나 조절할지 지정, value: 초기값을 지정-->
     <input type="date">         <!-- 날짜를 선택-->
             <!-- 예시 -->   <label><input type="date" id="start"></label>
-                            <label><input type="date" id="end"></label>
+            <label><input type="date" id="end"></label>
     <input type="month">            <!-- 월과 연도를 선택--> 
     <input type="week">         <!-- 주와 연도를 선택-->
     <input type="number" min="숫자" max="숫자" value="숫자">           <!-- 입력값을 숫자로 인식한다. 브라우저에 따라 스핀박스가 설정되기도 함-->
@@ -334,28 +339,43 @@ FTP(File Transfer Protoocol) 프로그램: 서버에 파일을 올리고 내릴 
     <input type="color" value="#00ff00(이렇게)">            <!-- 색상 선택 상자 표시, 색상 값은 16진수로 표시-->
     <input type="submit" value="버튼내용">           <!-- 서버에 전송 버튼-->
     <input type="reset" value="버튼내용">            <!-- 리셋버튼 만들기-->
-    <input type="image" src="경로" alt="대체 텍스트">            <!-- 이미지 버튼 넣기, 원하는 이미지의 버튼을 만들 수 있다! -->
-            <!-- 예시-->    <input type="image" id="butt" src="경로" alt="login">     
+    <input type="image" src="경로" alt="대체 텍스트" height="숫자" width="숫자">            <!-- 이미지 버튼 넣기, 원하는 이미지의 버튼을 만들 수 있다! -->
+    <!-- 예시-->    <input type="image" id="butt" src="경로" alt="login">     
     <input type="button" value="버튼 내용" onclick="JS 함수 및 명령">           <!-- 버튼 넣기-->
-    <input type="file">         <!-- 파일 첨부하기-->
+    <input type="file" multiple>         <!-- 파일 첨부하기-->
+    <input type="" autofocus required>       <!-- autofocus 속성: 입력 커서 표시하기-->
+    <input type="" placeholder="텍스트">       <!-- placeholder 속성: 입력란에는 적당한 힌트 내용을 표시!-->
+    <input type="" readonly>      
+    <input type="" readonly="readonly">
+    <input type="" readonly="true">       <!-- readonly 속성: 읽기 전용 필드 만들기, 사용자가 내용을 건들 수 없음-->
+    <input type="" required>      
+    <input type="" required="required">       <!-- required 속성: 필수 필드로 지정하기-->
+<select> </select>          <!-- 드랍다운 만들기-->
+    <select size="" multiple>           <!-- size: 한 번에 몇 개 표시할지, multiple: 여러 항목을 선택할 수 있게 함-->
+        <option value="" selected></option>         <!-- value: 서버로 넘겨질 값, selected: 기본으로 선택되어 있는 옵션 지정-->
+    </select>
+    <optgroup label=""> </optgroup>          <!-- 여러 항목들을 몇 가지 그룹을 묶을 때 사용! label 속성에 제목을 붙인다!-->
+<button> </button>              <!-- 3가지 버튼 타입을 만들 수 있음-->
+    <button type="submit"> </button>        <!-- submit: 폼을 서버로 전송, reset: 내용을 초기화시킴, button: 버튼만 만들고 기능은 없다-->
+<output> </output>          <!-- 입력하는 값이 계산 결과라는 것을 웹에 알려줌-->
+<progress> </progress>      <!-- 진행 상태를 보여줌-->
+    <progress value="" max=""> </progress>          <!-- value: 작업진행상태를 나타냄, max: 얼마나 많은 작업이 완료까지 남았는지 표현-->
+<meter> </meter>            <!-- 값이 차지하는 크기 표시-->
+    <meter value="텍스트" min="텍스트" max="텍스트" low="텍스트" high="텍스트" optimum="텍스트"> </meter>           <!-- -->
+
+
 
 <!-- <label> 예시-->
-<label for="user-id">아이디(6자 이상)</label>
+<label class="wow" for="user-id">아이디(6자 이상)</label>
 <input type="text" id="user-id">
 
 <!-- <label> 예시-->
 <form>
     <h3>당덩윤에게 해당하는 것을 모두 고르시오</h3>
     <ul>
-        <li>
-            <label><input type="radio" name="features" value="drunk">술꾼</label>
-        </li>
-        <li>
-            <label><input type="radio" name="features" value="lover">사랑꾼</label>
-        </li>
-        <li>
-            <label><input type="radio" name="features" value="doglover">댕댕꾼</label>
-        </li>
+        <li><label><input type="radio" name="features" value="drunk">술꾼</label></li>
+        <li><label><input type="radio" name="features" value="lover">사랑꾼</label></li>
+        <li><label><input type="radio" name="features" value="doglover">댕댕꾼</label></li>
     </ul>
 </form>
 
@@ -385,4 +405,34 @@ FTP(File Transfer Protoocol) 프로그램: 서버에 파일을 올리고 내릴 
     </fieldset>
 </form>
 
+<!-- dropdown 예시-->
+<label class="reg" for="class">학과</label>
+<select id="class">
+    <optgroup label = "공대">
+        <option value="archi">건축공학과</option>
+        <option value="mecha">기계공학과</option>
+        <option value="indust">산업공학과</option>
+        <option value="elec">전기전자공학과</option>
+        <option value="computer">컴퓨터공학과</option>
+    </optgroup>
+    <optgroup label="상경대학">
+        <option value="stat">응용통계학과</option>
+        <option value="busi">경영학과</option>
+        <option value="econo">경제학과</option>
+    </optgroup>
+</select>
 
+<!-- Datalist 예시-->
+<input type="text" id="interest" list="choices">
+<datalist id="choices">
+    <option value="망우" label="깎깎이"></option>
+    <option value="성재" label="민들레"></option>
+    <option value="동윤" label="개XX"></option>
+</datalist>
+
+<!-- image, button 예시-->
+<form>
+    <button type="submit" class="subm">
+        <img src="images/tick.png" alt=""> 전송하기
+    </button>
+</form>
