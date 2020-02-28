@@ -5,10 +5,51 @@
 태그 태그 */
 
 
-/* CSS 모음 */
+/* CSS 기초 */
+/* 전체 선택자 */
+* {
+    margin: 0;
+    padding: 0%;
+}                   /* 기본형 */
+
+/* tag 선택자 */
+div {
+    font-size: 15px;
+}
+
+/* class 선택자, 2가지 이상의 클래스 스타일을 적용할 수도 있다!*/
+.className {
+    color: chocolate;
+}
+
+/* id 선택자, id는 문서 안에서 한 번만 적용가능하다는 것! */
+#idName {
+    font-weight: lighter;
+}
+
+/* 그룹 선택자 */
+h1, h2 {
+    padding: 5%;
+}
+
+
+/* CSS 모음
+a b c d e f g h i j k l m n o p q r s t u v w x y z */
+div { 
+    border: 1px dotted gray;        /* 테두리 스타일 */
+    color :blue;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 20px;
+    padding: 15%;       /* 테두리와 내용 사이의 여백 */
+    text-align: 16;
+    text-decoration: underline;
+}
+
 a, a:visited {
     color:#222;         /* 글자색 */
     text-decoration: none;      /* 밑줄 없앰 */
+    text-align: center;
 }
 
 #sns > ul {
