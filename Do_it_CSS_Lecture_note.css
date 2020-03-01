@@ -33,6 +33,40 @@ h1, h2 {
 }
 
 
+
+
+
+/* 스타일 우선순위
+# Importance 중요도
+ - 스타일이 어디서 선언되었는가에 따라 중요성이 달라짐
+ 1) 사용자 스타일의 중요 스타일
+ 2) 제작자 스타일의 중요 스타일: 최우선으로 적용할 스타일에 !important를 붙임
+ 3) 제작자 스타일의 일반 스타일
+ 4) 기본 브라우저 스타일
+
+# Specificity 적용범위
+ - 중요도 순
+ 1) 인라인 스타일
+ 2) id 스타일
+ 3) 클래스 스타일
+ 4) 태그 스타일
+
+# Source Order 소스 내 순서
+ - !important를 붙이면 인라인 스타일보다 우선순위가 올라간다. */
+
+
+
+
+
+/* 스타일 상속
+ - 자식 요소에 별도 스타일이 없으면 부모 요소 스타일이 자식 요소에 전달된다.
+
+
+
+
+
+
+
 /* CSS 모음
 a b c d e f g h i j k l m n o p q r s t u v w x y z */
 div { 
@@ -44,6 +78,7 @@ div {
     padding: 15%;       /* 테두리와 내용 사이의 여백 */
     text-align: 16;
     text-decoration: underline;
+    transform: rotate(15deg);
 }
 
 a, a:visited {
