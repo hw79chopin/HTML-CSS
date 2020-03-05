@@ -203,10 +203,29 @@ span {
     background-attachment: scroll;              /* 배경 이미지 고정하기 [fixed | scroll]
                                                     scroll: default, 스크롤과 함께 스크롤
                                                     fixed: 고정됨 */
-
-
+    background: linear-gradient(to right bottom, blue, white);
+    background: linear-gradient(45deg, blue, white 30%, yellow);              /* 그라데이션 넣기 [to top | to left | to right | to bottom]
+                                                   to top: 아래에서 위로
+                                                   to left: 오른쪽에서 왼쪽으로
+                                                   to right: 왼쪽에서 오른쪽으로
+                                                   to bottom: 위에서 밑으로
+                                                   deg: 각도를 사용한 그라데이션
+                                                   중간 argument (e.g white 30%)는 중지 점 색상과 위치다. */
+    background: radial-gradient(circle at n% n%, blue, white, yellow);              /* 그라데이션 넣기 [circle | ellipse]
+                                                                                       circle: 원형
+                                                                                       ellipse: 타원형 
+                                                                                       circle at: 원의 시작 위치를 정할 수 있다.
+                                                                                       circle closest-side: 가장 가까운 모서리까지
+                                                                                       circle closest-corner: 가장 가까운 코너까지
+                                                                                       circle farthest-side: 가장 먼 모서리까지
+                                                                                       circle farthest-corner: default. 가장 먼 코너까지
+                                                                                       각 색 뒤에 %를 붙여서 생삭 중지 점을 지정할 수 있다.*/
+    background: repeating-linear-gradient(yellow, yellow 20px, red 20px, red 40px);              /* 그라데이션 반복 */
 }
 
+.class:hover {
+    /* 이렇게 하면 마우스 올려놓았을 때 설정을 만들 수 있음*/
+}
 
 
 
