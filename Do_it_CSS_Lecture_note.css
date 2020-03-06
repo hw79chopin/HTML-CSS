@@ -231,6 +231,82 @@ span {
 
 
 
+/* CSS 박스 모델 
+# 박스 모델이란? 웹 문서의 내용을 박스 형태로 정의하는 방법!
+- 블록 레벨요소: 혼자 한 줄을 차지. 너비가 100%. <div> <p>가 대표적
+- 인라인 레벨요소: 한 줄에 여러 개의 레벨 요소를 표시 가능. <img> <strong>가 대표적
+- 패딩: 테두리와 내용 사이의 여백
+- 마진: 요소들 사이의 여백 */
+.box-model {
+    height: 30%;
+    width: 30%;         /* [크기 | 백분율 | auto]
+                           크기: px, cm 같은 수치로 지정
+                           백분율: 부모 요소를 기준으로 백분율로 지정
+                           auto: default, 콘텐츠 양에 따라 자동으로 결정.   
+                           모던 브라우저: 전체너비 = width값 + 좌우 패딩 + 좌우 테두리
+                           Internet explorer 6: width값 = 콘텐츠 너비 + 좌우 패딩 + 좌우 테두리*/
+    display: none;      /* [none | contents | block | inline | inline-block | table | table-cell ..]
+                            block: 해당 요소를 블록 레벨로 지정
+                            inline: 해당 요소를 인라인으로 지정. 주로 목록에서 사용
+                            inline-block: 인라인 레벨로 배치하면서 내용은 블록 레벨 속성을 지정할 때 사용
+                            none: 해당 요소를 화면에 표시하지 않음. 공간조차 차지하지 않는다.
+                            table: 블록 레벨의 표를 만든다.
+                            inline-table: 인라인 레벨의 표를 만듦
+                            table-row: 표의 행으로 만듦. <tr> 태그처럼
+                            table-row-group: 표의 행 그룹을 만듦. <tbody>
+                            table-header-group: 표의 제목 영역 그룹을 만듦. <thead>
+                            table-footer-group: 표의 요약 영역 그룹을 만듦. <tfoot>
+                            table-column: 표의 열로 만듦. <col>
+                            table-column-group: 표의 열 그룹을 만듦. <colgroup>
+                            table-cell: 표에서 하나의 셀로 만듦. <td> <th>
+                            table-caption: 표의 캡션을 만듦. <caption>
+                            list-item: 기본적인 블록 박스와 표시자 박스를 만듦 */
+    border-style: dashed;    /* [none | hidden | dashed | dotted | double | groove | inset | outset | ridge | solid]
+                                 none: default, 테두리 없음
+                                 hidden: 테두리가 안 나타남
+                                 solid: 실선
+                                 dashed: 짧은 선
+                                 dotted: 점선
+                                 double: 이중선, 간격은 border-width로 지정
+                                 groove: 창에 조각한 것처럼 표시
+                                 inset: border-collapse:collapse이면 groove와 같고, seperate이면 창에 박힌 것처럼 표시
+                                 outset: border-collapse:collapse이면 ridge와 같고, seperate이면 창에서 튀어나온 것처럼 표시
+                                 ridge: 테두리를 창에서 튀어나온 것처럼 표시 */
+    border-width: 5px 10px 15px 20px;          /* [위 | 오른쪽 | 밑 | 왼쪽] 순서 */
+    border-width: thick thin;          /* [위 | 오른쪽 | 밑 | 왼쪽] 순서로 돌아감~ thin < medium < think 순서  */
+    border-color: red;               /* [위 | 오른쪽 | 밑 | 왼쪽] 순서 */
+    border-top: 2px;                 /* 위쪽 테두리만 따로 지정 */
+    border-bottom: 2px;              /* 아래쪽 테두리만 따로 지정 */
+    border-left: 2px;                /* 왼쪽 테두리만 따로 지정 */
+    border-right: 2px;               /* 오른쪽 테두리만 따로 지정 */
+    border: solid 2px black;       /* 테두리 스타일 묶어서 지정 */
+    border-radius: 30%;              /* 박스 모서리 둥글게 만들기. [크기 | 백분율] */
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+    border-bottom-left-radius: 20% 30;          /* 타원 만들기 */
+    border-bottom-right-radius: 20%;            /* 이렇게 4 모퉁이를 지정해줄 수 있음 */
+    
+    box-shadow: 5px 5px 15px 5px black;              /* 그림자 효과 내기 [수평거리 | 수직거리 | 흐림정도 | 번짐정도 | 색상] 
+                                                          수평거리, 수직거리: 필수값*/
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* CSS 예시 모음
 a b c d e f g h i j k l m n o p q r s t u v w x y z */
@@ -283,4 +359,16 @@ a, a:visited {
 .fire-shadaow { /* 불타는 듯한 shadow 효과 */
     color: #000;
     text-shadow: 0 0 4px #ccc, 0 -5px 4px #ff3, 2px -10px 6px #fd3, -2px -15px 11px #f80, 2px -19px 18px #f20;
+}
+
+.round {
+    border-radius: 20px 70px;           /* 왼쪽 위 -> 오른쪽 위 -> 오른쪽 아래 -> 왼쪽 아래 순서로 돌아감*/
+}
+
+div {       /* 원으로 된 공간 만들기 */
+    width: 100px;
+    height: 100px;
+    background: yellow;
+    border: 3px solid red;
+    border-radius: 50%;
 }
