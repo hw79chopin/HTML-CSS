@@ -337,6 +337,68 @@ span {
 }
 
 
+/* 다단 관련 
+다단관련 속성은 브라우저별 접두사를 붙여 사용해야 함!
+-webkit-: 크롬, 사파리
+-moz-: 파이어폭스
+-o-: 오페라
+-ms-: 인터넷 익스플로러*/
+.content {
+    column-width: auto;                     /* 단의너비를 고정! [크기 | auto]
+                                               auto: 단의 개수 같은 속성에 따라 단의 너비가 자동 계산 
+                                               너비가 고정되기 때문에 화면의 너비가 달라지면 단의 개수도 달라짐*/
+    column-count: auto;                     /* 단의 개수를 고정. [숫자 | auto] 
+                                               단의 너비 같은 속성에 따라 단의 개수가 자동 계산*/
+    column-gap: normal;                     /* 단과 단 사이 여백 지정. [크기 | normal]  */
+    column-rule: thin solid  #000;                   /* 구분선의 색상, 스타일, 너비 지정 [너비 | 스타일 | 색상]*/
+    column-rule-color:  #000;                   /* [색상]*/
+    column-rule-style:  #000;                   /* [none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset]*/
+    column-rule-width:  #000;                   /* [크기 | thin | medium | thick]*/
+    break-after: column;              /* 특정 요소 뒤에서 단을 나눔
+                                         다단을 어디서부터 시작할지 지정하는 속성. [column | avoid-column] 
+                                         column: 단을 나눔
+                                         avoid-column: 단을 나누지 않음*/
+    break-before: column;              /* 특정 요소 앞에서 단을 나눔 [column | avoid-column] */
+    break-inside: column;              /* 특정 요소 안에서 단을 나눔 [column | avoid-column] */
+    column-span: all;                  /* 여러 단을 하나로 합치기 [1 | all] 
+                                          1: default. 단을 합치지 않는 것
+                                        all: 전체 단을 하나로 합침. 일부만 합칠 수는 없다. */
+}
+
+
+/* 표 스타일 */
+.table {
+    caption-side: bottom;                       /* 표 제목 위치 정하기  [top | bottom] */
+    border: inherit;                            /* 표 테두리 스타일 정하기 */
+    border-collapse: collapse;                  /* 테두리 통합, 분리하기 [separate | collapse]
+                                                   separate: default
+                                                   collapse: 테두리를 하나로 합쳐서 표시 */
+    border-spacing: 0em;                     /* 인접한 셀 테두리 사이 거리 지정하기 [크기] 
+                                                값이 하나면 수평, 수직 거리를 한 번에 지정
+                                                값이 2개면 첫 번째 = 수평거리, 두 번째 = 수직거리 */
+    empty-cells: hide;                       /* 빈 셀의 표시 여부 정하기 [show | hide]
+                                                show: default. 테두리를 그려 빈 셀을 표시
+                                                hide: 비워 둠 */
+    width: 200em;                           
+    height: 200em;                           /* 부모 요소를 기준으로 한 % 혹은 px. auto로 두면 셀의 줄 바꿈에 따라 높이 값은 자동 조정!*/
+    padding: 1em;                            /* 내용과 표 테두리의 거리 */
+    table-layout: auto;                      /* 콘텐츠에 맞게 셀 너비 지정 [fixed | auto]
+                                                auto: default. 셀 내용에 따라 너비가 달라짐
+                                                fixed: 셀 너비를 고정 */
+    word-break: break-all;                   /* 셀 너비보다 긴 내용도 셀 안에 표시 */
+    text-align: center;                      /* 셀 안에서 수평 정렬하기. [일반 텍스트 정렬이랑 같음] */
+    vertical-align: baseline;                /* 셀 안에서 수직 정렬하기 
+                                                [baseline | top | bottom | middle | sub | super | text-top | text-bottom | 길이 | 백분율]
+                                                 baseline: 인라인 요소의 기준선을 부모 요소의 기준선에 맞춤
+                                                 sub: 인라인 요소의 기준선을 부모 요소의 아래 첨자 위치에 맞춤
+                                                 super: 인라인 요소의 기준선을 부모 요소의 위 첨자 위치에 맞춤
+                                                 top: 인라인 요소의 윗부분을 부모 요소의 윗부분에 맞춤
+                                                 middle: 인라인 요소의 중앙 부분을 부모 요소의 기준선에서 x-높이 반만큼 올려서 맞춤
+                                                 bottom: 인라인 요소의 아랫부분을 부모 요소의 아랫부분에 맞춤
+                                                 text-top: 인라인 요소의 윗부분을 부모 요소 글골의 윗부분에 맞춤
+                                                 text-bottom: 인라인 요소의 아랫부분을 부모 요소 글꼴의 아랫부분에 맞춤 */
+                                                 
+}
 
 
 
