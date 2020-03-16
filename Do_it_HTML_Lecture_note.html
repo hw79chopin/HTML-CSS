@@ -458,3 +458,29 @@ FTP(File Transfer Protoocol) 프로그램: 서버에 파일을 올리고 내릴 
                                  seaemless: 테두리를 없애 본문의 일부처럼 보이도록 만듦-->
 <footer> </footer>          <!-- 제작 정보 및 저작권 정보 등을 표시-->
 <address> </address>        <!-- 사이트 제작자 정보, 연락처 정보 나타내기-->
+
+
+
+
+<!-- 웹과 멀티미디어 -->
+<object> </object>              <!-- 외부 파일 삽입하기-->
+    <object data="경로" type="유형" width="너비" height="높이" name="이름"> </object>
+<embed>                         <!-- <object> 태그를 지원하지 않는 이전 브라우저에서 외부 파일 삽입 시 사용 -->
+    <embed src="경로" type="유형" width="너비" height="높이">
+<audio> </audio>                <!-- 오디오 파일 삽입하기-->
+    <audio src="경로" autoplay controls loop muted preload="값"> </audio>
+                <!-- autoplay: 오디오를 자동 재생. 크롬에서는 자동 재생되지 않음
+                     controls: 웹 화면에 컨트롤 막대를 표시
+                     loop: 반복 재생
+                     muted: 오디오를 재생하지만 소리는 끔
+                     preload: 재생 전에 오디오 파일을 다운로드해 준비해둔다. [none | metadata | auto]
+                              none: 사용자가 재생 버튼을 눌러야만 다운로드
+                              metadata: 메타 정보만 다운로드함
+                              auto: default. 미디어 파일도 모두 다운로드함-->
+<video> </video>                <!-- 비디오 파일 삽입하기-->
+    <video src="경로" controls> </video>
+<source>                        <!-- 여러 미디어 파일 한꺼번에 지정하기-->
+    <source src="경로" type="유형" codecs="코덱">
+<track>                         <!-- 비디오 화면에 자막 추가하기-->
+    <track kind="자막 종류" src="경로" srclang="언어" label="제목" default>
+            <!-- kind: 자막의 종류를 지정 [subtitles | captions | descriptions | chapters | metadata] -->
