@@ -139,7 +139,7 @@ h1, h2 {
                                     distribute: 인접한 글자 사이의 공백을 맞춰 정렬*/
     text-indent: 30%;           /* 문단의 첫 글자를 얼마나 들여 쓸지를 지정, 크기를 지정할 수도 있고 백분율을 지정할 수도 있다. */
     line-height: 0%;            /* 줄 간격 조절하기. [normal | 숫자 | 크기 | 백분율 | inherit], 숫자를 입력하면 글자 크기의 n배만큼 줄 간격이 설정됨 */
-    overflow: hidden;           /* 넘치는 부분을 감춤. [hidden | visible] visible하면 넘치는 부분을 보여주고 hidden하면 넘치는 부분을 감춤*/
+    overflow: hidden;           /* 넘치는 부분을 감춤. [hidden | visible | scroll] visible하면 넘치는 부분을 보여주고 hidden하면 넘치는 부분을 감춤*/
     text-overflow: clip;          /* 넘치는 텍스트 처리 [clip | ellipsis]
                                      clip: 넘치는 텍스트를 자름
                                      ellipsis: (...)로 잘린 텍스트를 표시*/
@@ -461,9 +461,46 @@ a[href $= 'hwp'] {
 ::before         ::after                        /* 내용 앞뒤에 콘텐츠 추가하기*/ 
 
 
+/* 변형 */
+.photo {
+    transform: rotate(90);                      /* 변형 함수. [대따 많음]
+                                                   translate(tx, ty): 지정한 크기만큼 x축, y축으로 이동함
+                                                   translateX(tx): 지정한 크기만큼 x축 이동
+                                                   translateY(ty): 지정한 크기만큼 y축 이동
+                                                   scale(sx, sy): 지정한 크기만큼 x축, y축으로 확대/축소
+                                                   scaleX(sx): 지정한 크기만큼 x축으로 확대/축소
+                                                   sclaeY(sy): 지정한 크기만큼 y축으로 확대/축소
+                                                   rotate(각도): 지정한 각도만큼 회전
+                                                   skew(ax, ay): 지정한 각도만큼 x축, y축으로 왜곡
+                                                   skewX(ax): 지정한 각도만큼 x축으로 왜곡
+                                                   skewY(ay): 지정한 각도만큼 x축으로 왜곡
+                                                   matrix3d(n [, n]): 4x4 행렬을 이용해 이동, 확대, 축소, 회전 등의 변환을 지정
+                                                   translate3d(tx, ty, tz): 지정 크기만큼 x축, y축, z축으로 이동
+                                                   translateZ(tz): 지정 크기만큼 z축으로 이동
+                                                   scale3d(sx,sy,sz): 지정 크기만큼 x축, y축, z축으로 확대/축소
+                                                   scaleZ(sz): 지정 크기만큼 z축으로 확대/축소
+                                                   rotate3d(rx,ry,rz,각도): 지정한 각도만큼 회전
+                                                   rotateX(각도): 지정한 각도만큼 x축으로 회전
+                                                   rotateY(각도): 지정한 각도만큼 y축으로 회전
+                                                   rotateZ(각도): 지정한 각도만큼 z축으로 회전
+                                                   perspective(길이): 입체적으로 보일 수 있는 깊이 값을 지정 */
+    transform-origin: 0rem;                     /* 변형 기준점 설정하기 [x축 y축 z축 | initial | inherit] */
+    perspective: 0rem;                          /* 원근감 표현하기 [크기 | none] */
+    transform-style: flat;                      /* 3D 변형 적용하기 [flat | preserve-3d] */
+    backface-visibility: hidden;                /* 요소의 뒷면 표시하기 [visible | hidden] */
 
-
-
+    transition-duration: 0s;                    /* 트랜지션 진행 시간 설정하기 */
+    transition-property: all;                   /* 트랜지션 대상 설정 [all | none | background-color | width, height 등등] */
+    transition-timing-function: func();         /* 속도 곡선 지정하기 [linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier(n,n,n,n)]
+                                                                     linear: 똑같은 속도로 트랜지션 진행
+                                                                     ease: default, 점점 빨라짐.
+                                                                     ease-in: 시작을 느리게 함
+                                                                     ease-out: 느리게 끝남
+                                                                     ease-in-out: 느리게 시작하고 느리게 끝냄
+                                                                     cubic-bezier(n,n,n,n): 베지에 함수에 직접 정의해 사용 */
+    transition-delay: 0s;                       /* 지연시간 설정하기 */
+    transition: background;                     /* transition 속성 한 번에 적용하기. property, duration, timing-function, delay 등을 지정가능 */
+}
 
 
 
@@ -575,4 +612,12 @@ li.hot::after {
     padding: 2px 4px;
     margin: 0 10px;
     border-radius: 2px;
+}
+
+/* transition 예시 */
+.photo:hover {
+    transition: all 1s;
+    transform:scale(1.5);
+    box-shadow: 5px 5px 3px 3px black;
+    transform-origin: left top;
 }
