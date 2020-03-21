@@ -6,7 +6,7 @@
 * {
     margin: 0;
     padding: 0%;
-}                   /* 기본형 */
+}       /* 기본형 */
 
 /* tag 선택자 */
 div {
@@ -90,7 +90,7 @@ h1, h2 {
     font: italic 12px/24px 돋움;          /* 글꼴 속성을 한꺼번에 묶어 표현
         font-: font로 시작하는 글꼴 속성을 한꺼번에 나열. "font-size와 line-height는 '/'로 같이 묶어서 입력한다."
         caption: 캡션에 어울리는 글꼴 스타일 지정
-        small-caoption: 작은 캡션에 어울리는 글꼴 스타일 지정
+        small-caption: 작은 캡션에 어울리는 글꼴 스타일 지정
         icon: 아이콘에 어울리는 글꼴 스타일 지정
         menu: 드롭다운 메뉴에 어울리는 글꼴 스타일 지정
         message-box: 대화상자에 어울리는 글꼴 스타일 지정 
@@ -145,11 +145,11 @@ h1, h2 {
 
 /* 리스트 관련 스타일 */
 .list-style {
-    list-style-type: none;          /* 목록의 불릿과 번호 스타일 지정하기 [disc | circle | square | none | .... |]
+    list-style-type: none;              /* 목록의 불릿과 번호 스타일 지정하기 [disc | circle | square | none | .... |]
                                         disc: 채운 원
                                         circle: 빈 원
                                         square: 채운 사각형
-                                        noe: 불릿 없애기
+                                        none: 불릿 없애기
                                         decimal: 1로 시작하는 십진수
                                         decimal-leading-zero: 앞에 0이 붙는 십진수
                                         lower-roman: 소문자 로마 숫자
@@ -158,7 +158,7 @@ h1, h2 {
                                         upper-alpha / upper-latin: 대문자 알파벳
                                         armenian: 아르메니아 숫자
                                         georgian: 조지 왕조시대의 숫자 */
-    list-style-image: none;           /* **불릿 대신 이미지 넣기. [none | url( ' ' )] */
+    list-style-image: none;             /* **불릿 대신 이미지 넣기. [none | url( ' ' )] */
     list-style-position: inside;        /* 목록에 들여 쓰는 효과 [inside, outside] 
                                             inside: 불릿이나 숫자를 안쪽으로 들여 씀
                                             outside: 기본값, 밖으로 내어 씁니다.*/
@@ -172,7 +172,6 @@ span {
     color: rgba(255,0,0,0.4);           /* RGBA표기법 [red 값, green 값, blue 값, alpha 값] */
     color: hsl(360, 100%, 0%, 0.5);           /* hsla 표기법 [hue 값, saturation 값, lightness 값, alpha 값] */
     color: white;           /* 색상이름 표기법*/
-    background: url('') no-repeat fixed center top scroll;      /* 한방에 모으기 */
     background-color: teal;         /* 배경색 지정하기 */
     background-clip: border-box;        /* **배경 적용 범위 조절, [border-box | padding-box | content-box]
                                             border-box: 박스 모델의 가장 외곽인 테두리까지 적용
@@ -198,8 +197,9 @@ span {
                                                     padding-box: 패딩이 기준
                                                     content-box: 내용 부분이 기준 */
     background-attachment: scroll;              /* **배경 이미지 고정하기 [fixed | scroll]
-                                                    scroll: default, 스크롤과 함께 스크롤
-                                                    fixed: 고정됨 */
+                                                     scroll: default, 스크롤과 함께 스크롤
+                                                     fixed: 고정됨 */
+    background: url('') no-repeat fixed center top scroll;      /* 한방에 모으기 */
     background: linear-gradient(to right bottom, blue, white);
     background: linear-gradient(45deg, blue, white 30%, yellow);              /* 그라데이션 넣기 [to top | to left | to right | to bottom]
                                                    to top: 아래에서 위로
@@ -251,7 +251,6 @@ span {
                             table-cell: 표에서 하나의 셀로 만듦. <td> <th>
                             table-caption: 표의 캡션을 만듦. <caption>
                             list-item: 기본적인 블록 박스와 표시자 박스를 만듦 */
-
     border: solid 2px black;       /* 테두리 스타일 묶어서 지정 */
     border-style: dashed;    /* [none | hidden | dashed | dotted | double | groove | inset | outset | ridge | solid]
                                  none: default, 테두리 없음
@@ -302,7 +301,7 @@ span {
 
 /* CSS 포지셔닝 */
 .position {
-    box-sizing: border-box;                 /* 콘텐츠 영역의 너비 + 패딩 + 테두리까지 합친 width 속성지정가능. [content-box | border-box] 
+    box-sizing: border-box;                 /* **콘텐츠 영역의 너비 + 패딩 + 테두리까지 합친 width 속성지정가능. [content-box | border-box] 
                                                content-box: default. width = 콘텐츠 영역 너비 
                                                border-box: width = 콘텐츠 영역 + 테두리 포함
                                                여러 박스 모델을 화면에 배치하려면 박스 모델의 너비값을 정확히 계산해야 함*/
@@ -334,12 +333,12 @@ span {
 -o-: 오페라
 -ms-: 인터넷 익스플로러*/
 .content {
-    column-width: auto;                     /* 단의너비를 고정! [크기 | auto]
-                                               auto: 단의 개수 같은 속성에 따라 단의 너비가 자동 계산 
-                                               너비가 고정되기 때문에 화면의 너비가 달라지면 단의 개수도 달라짐*/
-    column-count: auto;                     /* **단의 개수를 고정. [숫자 | auto] 
-                                               단의 너비 같은 속성에 따라 단의 개수가 자동 계산*/
-    column-gap: normal;                     /* 단과 단 사이 여백 지정. [크기 | normal]  */
+    column-width: auto;                           /* 단의너비를 고정! [크기 | auto]
+                                                     auto: 단의 개수 같은 속성에 따라 단의 너비가 자동 계산 
+                                                     너비가 고정되기 때문에 화면의 너비가 달라지면 단의 개수도 달라짐*/
+    column-count: auto;                           /* **단의 개수를 고정. [숫자 | auto] 
+                                                      단의 너비 같은 속성에 따라 단의 개수가 자동 계산*/
+    column-gap: normal;                           /* 단과 단 사이 여백 지정. [크기 | normal]  */
     column-rule: thin solid  #000;              /* 구분선의 색상, 스타일, 너비 지정 [너비 | 스타일 | 색상]*/
     column-rule-color:  #000;                   /* [색상]*/
     column-rule-style:  #000;                   /* [none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset]*/
@@ -359,7 +358,7 @@ span {
 /* 표 스타일 */
 .table {    
     caption-side: bottom;                       /* 표 제목 위치 정하기  [top | bottom] */
-    border: inherit;                            /* 표 테두리 스타일 정하기 */
+    border: solid 2px black;                  /* 표 테두리 스타일 정하기 */
     border-collapse: collapse;                  /* **테두리 통합, 분리하기 [separate | collapse]
                                                    separate: default
                                                    collapse: 테두리를 하나로 합쳐서 표시 */
@@ -392,57 +391,36 @@ span {
 
 
 /* 연결 선택자 */
-selector1 selector2  {
-        /* 지정한 모든 하위 요소에 스타일 적용하기 */
-}
+selector1 selector2  {}                 /* 지정한 모든 하위 요소에 스타일 적용하기 */
+parent > child {}                       /* **자식 요소에만 스타일 적용하기. 손자 요소에는 스타일이 적용되지 않는다 */
+selector + selector {}                  /* 가장 가까운 형제 요소에 스타일 적용하기 */
+selector ~ selector {}                  /* 형제 요소에 스타일 적용하기 */
 
-parent > child {
-        /* **자식 요소에만 스타일 적용하기. 손자 요소에는 스타일이 적용되지 않는다 */
-}
 
-selector + selector {
-        /* 가장 가까운 형제 요소에 스타일 적용하기 */
-}
-
-selector ~ selector {
-        /* 형제 요소에 스타일 적용하기 */
-}
 
 
 /* 속성 선택자 */
-a[href] {
-    background: yellow;                 /* 지정한 속성에 스타일 적용하기 */
-}
-a[target="_blank"] {
-    padding-left: 30em;                   /* 특정 값을 갖는 속성에 스타일 적용하기 */
-}
-[class ~="button"] {
-    border: 2px solid black;            /* 특정 값이 포함된 속성에 스타일 적용하기 */
-}
-a[title |= "jap"] {
-    padding: 5px 25px;                    /* 특정 값이 포함된 속성에 스타일 적용하기. contains의 느낌 */
-}
-a[title ^= "eng"] {
-    border: 2px solid yellow;           /* 특정 값으로 시작하는 속성에 스타일 적용 */
-}
-a[href $= 'hwp'] {
-    padding: 2px;                         /* 특정 값으로 끝나는 속성에 스타일 적용하기 */
-}
-[href *= "w3"] {
-    color: white;                       /* 값의 일부가 일치하는 속성에 스타일 적용하기 */
-}
+a[href] {background: yellow;}                      /* 지정한 속성에 스타일 적용하기 */
+a[target="_blank"] {padding-left: 30em;}             /* 특정 값을 갖는 속성에 스타일 적용하기 */
+[class ~="button"] {border: 2px solid black;}      /* 특정 값이 포함된 속성에 스타일 적용하기 */
+a[title |= "jap"] {padding: 5px 25px;}               /* 특정 값이 포함된 속성에 스타일 적용하기. contains의 느낌 */
+a[title ^= "eng"] {border: 2px solid yellow;}      /* 특정 값으로 시작하는 속성에 스타일 적용 */
+a[href $= 'hwp'] {padding: 2px;}                     /* 특정 값으로 끝나는 속성에 스타일 적용하기 */
+[href *= "w3"] {color: white;}                     /* 값의 일부가 일치하는 속성에 스타일 적용하기 */
+
+
 
 
 /* 가상 클래스와 가상 요소 */
-:link                   /* 방문하지 않은 링크에 스타일 적용 */ 
+:link                   /* 방문하지 않은 링크에 스타일 적용 */
 :visited                /* 방문한 링크에 스타일 적용 */ 
 :hover                  /* 마우스 올려놓을 때 스타일 적용 */ 
 :focus                  /* 웹 요소에 초점이 맞추어졌을 때 스타일 적용. e.g 마우스 커서를 갖다 놓거나, Tab을 눌러 초점을 이동했을 때! */ 
 :active                 /* 웹 요소 활성화했을 때 스타일 적용 */ 
 :enabled  :disabled     /* 요소를 사용할 수 있을 때, 없을 때의 스타일 지정 e.g 회원 약관 등을 보여줄 때는 사용자가 내용을 보기만 해야하므로 disabled 상태로 만듦 */
-:checked                /* radio box, check box에서 해당 항목을 선택했을 때의 스타일 지정 */
+:checked                /* **radio box, check box에서 해당 항목을 선택했을 때의 스타일 지정 */
 :root                   /* 문서 전체에 적용하기 */
-:nth-child(n)  :nth-last-child(n)               /* 자식 요소의 위치에 따라 스타일 적용하기. 주로 메뉴 항목에 이 선택자를 빈용 */
+:nth-child(n)    :nth-last-child(n)             /* 자식 요소의 위치에 따라 스타일 적용하기. 주로 메뉴 항목에 이 선택자를 빈용 */
 :nth-of-type(n)  :nth-last-of-type(n)           /* 특정 태그 위치에 스타일 적용하기 */
 :first-child     :last-child                    /* 첫 번째, 마지막 요소에 스타일 적용하기 */
 :first-of-type   :last-of-type                  /* 형제 관계 요소의 위치에 따라 스타일 적용하기*/ 
@@ -491,7 +469,7 @@ a[href $= 'hwp'] {
                                                                      ease-in-out: 느리게 시작하고 느리게 끝냄
                                                                      cubic-bezier(n,n,n,n): 베지에 함수에 직접 정의해 사용 */
     transition-delay: 0s;                       /* 지연시간 설정하기 */
-    transition: background;                     /* transition 속성 한 번에 적용하기. property, duration, timing-function, delay 등을 지정가능 */
+    transition: background 1s;                     /* transition 속성 한 번에 적용하기. property, duration, timing-function, delay 등을 지정가능 */
 }
 
 /* 반응형 웹 */
@@ -506,8 +484,9 @@ a[href $= 'hwp'] {
                                                           only: 미디어 쿼리를 지원하는 웹 브라우저에서만 조건을 인식
                                                           not: not으로 지정된 미디어 유형은 제외함
                                                     미디어 유형 [all | print | screen | tv | aural | braille | handheld | projection | tty | embossed] */
-@media screen and (orientation:landscape) {}            /* 화면 회전을 감지할 수 있음 [landscape | portrait] */
+@media screen and (orientation:landscape) {}                   /* 화면 회전을 감지할 수 있음 [landscape | portrait] */
 @media screen and (min-device-aspect-ratio:16/9) {}            /* 화면 비율이 16:9 이하일 때 미디어 쿼리를 정의한 것 */
+
 
 /* 중단점(서로 다른 CSS를 적용할 화면 크기) 기준 
 아주 작은 화면: 576px 미만
@@ -516,39 +495,75 @@ a[href $= 'hwp'] {
 큰 화면: 992px 이상
 아주 큰 화면: 1200px 이상   */
 
+
 /* 외부 CSS 연결하기. @import 보다 <link>가 더 안정적이다. */
 @import url('css/tablet.css') only screen and (min-width:321px) and (max-width:768px);
 
 
-/* Flex Box */
+/* flex Box */
 .flex-box {
     display: flex;                          /* flex: 플렉스 컨테이너로 만들기
-                                               inline-flex:    */
+                                               inline-flex    */
     flex-direction: column;                 /* 플렉스 방향 지정하기 [row | row-inverse | columns | column-inverse]
-                                                                   row: default. 주축 가로, 교차축 세로. 플렉스 항목은 주축 시작점 -> 끝점
-                                                                   row-inverse: 주축 가로, 교차축 세로. 플렉스 항목은 주축 끝점 -> 시작점
-                                                                   column: 주축 세로, 교차축 가로. 플렉스 항목은 주축 시작점 -> 끝점
-                                                                   column-inverse: 주축 세로, 교차축 가로. 플렉스 항목은 주축 끝점 - 시작점  */
+                                                                    row: default. 주축 가로, 교차축 세로. 플렉스 항목은 주축 시작점 -> 끝점
+                                                                    row-inverse: 주축 가로, 교차축 세로. 플렉스 항목은 주축 끝점 -> 시작점
+                                                                    column: 주축 세로, 교차축 가로. 플렉스 항목은 주축 시작점 -> 끝점
+                                                                    column-inverse: 주축 세로, 교차축 가로. 플렉스 항목은 주축 끝점 - 시작점  */
     flex-wrap: nowrap;                      /* 플렉스 항목을 한 줄 or 여러 줄로 배치하기 [no-wrap | wrap | wrap-reverse]
-                                                                                       no-wrap: default, 플렉스 항목들을 한 줄에 표시
-                                                                                       wrap: 여러 줄에 표시
-                                                                                       wrap-inverse: 여러 줄로 표시하되 기존 방향과 반대로 배치 */
+                                                                                         no-wrap: default, 플렉스 항목들을 한 줄에 표시
+                                                                                         wrap: 여러 줄에 표시
+                                                                                         wrap-inverse: 여러 줄로 표시하되 기존 방향과 반대로 배치 */
     flex-flow: row wrap;                    /* 플렉스 방향과 여러 줄의 배치를 한꺼번에 지정하기 [플렉스 방향 | 플렉스 줄 배치] */
     order: 2;                               /* 플렉스 항목의 배치 순서 바꾸기 */
     flex: auto;                             /* 플렉스 항목 크기 조절하기. [flew-grow flew-shrink flew-basis | auto | initial]
-                                                                         첫 번째 숫자: 늘릴 비율
-                                                                         두 번째 숫자: 줄일 비율
-                                                                         세 번째 숫자: 기본 값  */
+                                                                          첫 번째 숫자: 늘릴 비율
+                                                                          두 번째 숫자: 줄일 비율
+                                                                          세 번째 숫자: 기본 값  */
     justify-content: center;                /* 주축 기준의 배치 방법 지정하기 [flex-start | flex-end | center | space-between | space-around]
-                                                                            flex-start: 주축의 시작점을 기준으로 배치
-                                                                            flex-end: 주축의 끝점을 기준으로 배치
-                                                                            center: 주축의 중앙을 기준으로 배치
-                                                                            space-between: 첫 항목과 마지막 항목을 양 끝에 배치 후 중앙 항목들은 같은 간격으로 배치
-                                                                            space-around: 모든 항목을 같은 간격으로 배치 */
+                                                                              flex-start: 주축의 시작점을 기준으로 배치
+                                                                              flex-end: 주축의 끝점을 기준으로 배치
+                                                                              center: 주축의 중앙을 기준으로 배치
+                                                                              space-between: 첫 항목과 마지막 항목을 양 끝에 배치 후 중앙 항목들은 같은 간격으로 배치
+                                                                              space-around: 모든 항목을 같은 간격으로 배치 */
     align-items: center;                    /* 교차축 기준의 배치 방법 지정 [stretch | flex-start | flex-end | ceneter | baseline] */
     align-self: center;                     /* 교차축 기준의 배치 방법 지정 [auto | stretch | flex-start | flex-end | center | baseline] */
     align-content: center;                  /* 여러 줄일 때 배치 방법 지정 [flex-start | flex-end | center | space-between | space-around] */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -582,25 +597,25 @@ div {
     font-weight: bold;
     margin-left: 20px;
     padding: 15%;       /* 테두리와 내용 사이의 여백 */
-    text-align: 16;
+    text-align: center;
     text-decoration: underline;
     transform: rotate(15deg);
     width: 90%;
 }
 
 a, a:visited {
-    color:#222;         /* 글자색 */
+    color:#222;               /* 글자색 */
     text-decoration: none;      /* 밑줄 없앰 */
     text-align: center;
 }
 
 #sns > ul {
-    padding-left: 0;        /* 목록 들여쓰지 않기 */
+    padding-left: 0;            /* 목록 들여쓰지 않기 */
 }
 
 #sns > ul > li {
     display:inline-block;       /* 항목을 가로로 배열 */
-    width:80px;         /* 각 항목의 너비 */
+    width:80px;                 /* 각 항목의 너비 */
 }
 
 <style>
@@ -630,7 +645,8 @@ a, a:visited {
     border-radius: 20px 70px;           /* 왼쪽 위 -> 오른쪽 위 -> 오른쪽 아래 -> 왼쪽 아래 순서로 돌아감*/
 }
 
-div {       /* 원으로 된 공간 만들기 */
+/* 원으로 된 공간 만들기 */
+div {       
     width: 100px;
     height: 100px;
     background: yellow;
