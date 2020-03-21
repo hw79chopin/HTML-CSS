@@ -112,7 +112,7 @@ FTP(File Transfer Protoocol) 프로그램: 서버에 파일을 올리고 내릴 
 <thead> </thead>            <!--표 구조 정의하기, 제목부분 -->
 <tbody> </tbody>            <!--표 구조 정의하기, 본문부분 -->
 <tfoot> </tfoot>            <!--표 구조 정의하기, 요약부분 -->
-<col>               <!--한 column에 모든 셀에 같은 스타일을 적용할 때 사용, 닫는 태그 없음 -->
+<col>                       <!--한 column에 모든 셀에 같은 스타일을 적용할 때 사용, 닫는 태그 없음 -->
     <col span="숫자">       <!--span 속성를 사용해서 몇 개를 함께 묶을 수도 있다. -->
 <colgroup> </colgroup>          <!--여러 columns들을 묶어 스타일 적용. caption 태그 뒤, tr,td 태그 전에 사용해야 함
                                 colgroup 내에 사용한 col 태그의 개수와 표의 column의 개수가 같아야 함-->
@@ -156,9 +156,9 @@ FTP(File Transfer Protoocol) 프로그램: 서버에 파일을 올리고 내릴 
         <p>짜몽이 애비 혀누</p>
     </caption>
     <tr>
-        <th>출몰지역</th>
-        <th>목격시간</th>
-        <th>특이사항</th>
+        <th>짜몽이</th>
+        <th>호몽이</th>
+        <th>아몽이</th>
     </tr>
 </table>
 
@@ -269,7 +269,7 @@ FTP(File Transfer Protoocol) 프로그램: 서버에 파일을 올리고 내릴 
 
 <!-- *앵커 예시-->
 <ul id="혀누의 살생부">
-    <li><a href="#민들레">민들리</a></li>
+    <li><a href="#민들레">민들레</a></li>
     <li><a href="#당덩윤">당덩윤</a></li>
     <li><a href="#기망우">기망우</a></li>
 </ul>
@@ -310,7 +310,7 @@ FTP(File Transfer Protoocol) 프로그램: 서버에 파일을 올리고 내릴 
         action 속성: 태그 안의 내용을 처리할 서버 상의 프로그램을 지정
         target 속성: <action>에서 지정한 파일을 다른 위치에 열도록 지정
         *autocomplete 속성: 자동완성 기능, default=on -->
-<label> </label>          <!-- <label> 태그를 사용하면 form 요소와 레이블 텍스트가 서로 연결되있음을 브라우저가 앎, *텍스트만 터치해도 버튼, 체크박스가 선택되게 만들 수 있음-->
+<label> </label>          <!-- <label> 태그를 사용하면 form 요소와 레이블 텍스트가 서로 연결되있음을 브라우저가 앎, **텍스트만 터치해도 버튼, 체크박스가 선택되게 만들 수 있음-->
 <textarea> </textarea>      <!-- 메모를 할 수 있는 공간을 만듦-->
     <textarea name="텍스트" cols="숫자" rows="숫자"> </textarea>        <!-- name: 텍스트 영역의 이름을 지정, cols: 가로 너비 지정-픽셀!, rows: 세로 길이 지정-줄-->
 <fieldset> </fieldset>         <!-- 하나의 폼 안에서 여러 구역을 나누어 표시할 때 사용, <fieldset> 태그 사이의 폼들을 하나의 영역으로 묶고 외곽선을 그려줌-->
@@ -319,16 +319,16 @@ FTP(File Transfer Protoocol) 프로그램: 서버에 파일을 올리고 내릴 
      <!-- 입력할 때 사용 (필드삽입, 버튼 삽입)-->
     <input type="" id="잘 활용할 것" size="10">       <!-- size 속성: 필드의 길이를 지정하는 속성-->
     <input type="hidden" id="텍스트" name="텍스트" value="텍스트">           <!-- 사용자에게는 보이지 않지만 서버로 넘져지는 값을 가짐-->
-    <input type="text" size="숫자" name="" *value="기본으로 띄울 텍스트" maxlength="숫자" minlength="숫자">             <!-- 한 줄짜리 일반 텍스트를 입력하는 필드, name: 텍스트 필드를 구별하는 이름, size:-필드 길이를 지정, value: 필드 부분에 표시될 내용, maxlength: 최대 문자 개수-->
+    <input type="text" size="숫자" name="" **value="기본으로 띄울 텍스트" maxlength="숫자" minlength="숫자">             <!-- 한 줄짜리 일반 텍스트를 입력하는 필드, name: 텍스트 필드를 구별하는 이름, size:-필드 길이를 지정, value: 필드 부분에 표시될 내용, maxlength: 최대 문자 개수-->
     <input type="text" id="텍스트" list="데이터목록이름!">             <!-- 한 줄짜리 일반 텍스트를 입력하는 필드, name: 텍스트 필드를 구별하는 이름, size:-필드 길이를 지정, value: 필드 부분에 표시될 내용, maxlength: 최대 문자 개수-->
     <datalist id="데이터목록이름!"> 
-        <option value="" label=""> </option>            <!-- *value: 서버로 넘겨질 값, *label: 웹에 표시될 값, 지정하지 않으면 value값이 label-->
+        <option value="" label=""> </option>            <!-- **value: 서버로 넘겨질 값, *label: 웹에 표시될 값, 지정하지 않으면 value값이 label-->
     </datalist>             <!-- 데이터 목록을 만들 때는 이와 같이 사용!-->
-    <input type="search">           <!-- *검색창 만들기-->
+    <input type="search">           <!-- **검색창 만들기-->
     <input type="tel">          <!-- 전화번호 입력란 만들기-->
     <input type="url">          <!-- URL 입력란 만들기-->
     <input type="email" multiple>            <!-- 이메일 주소 입력란 만들기, 자동으로 이메일 형식에 맞는지 체크해야 함, *multiple: 두 개 이상의 값을 입력-->
-    <input type="password">         <!-- *비밀번호 입력란, value 속성 빼고 text 필드와 동일-->
+    <input type="password">         <!-- **비밀번호 입력란, value 속성 빼고 text 필드와 동일-->
     <input type="time" min="" max="" step="" value="">         <!-- 시간을 지정할 때 사용 step: 스핀 박스의 화살표를 누를 때마다 얼마나 조절할지 지정, value: 초기값을 지정-->
     <input type="datetime" min="" max="" step="" value="">         <!-- 날짜와 시간을 함께 지정, step: 스핀 박스의 화살표를 누를 때마다 얼마나 조절할지 지정, value: 초기값을 지정-->
     <input type="datetime-local" min="" max="" step="" value="">         <!-- 날짜와 시간을 함께 지정, step: 스핀 박스의 화살표를 누를 때마다 얼마나 조절할지 지정, value: 초기값을 지정-->
@@ -336,21 +336,21 @@ FTP(File Transfer Protoocol) 프로그램: 서버에 파일을 올리고 내릴 
             <!-- 예시 -->   <label><input type="date" id="start"></label>
                             <label><input type="date" id="end"></label>
     <input type="month">            <!-- 월과 연도를 선택--> 
-    <input type="week">         <!-- 주와 연도를 선택-->
-    <input type="number" min="숫자" max="숫자" value="숫자">           <!-- 입력값을 숫자로 인식한다. 브라우저에 따라 스핀박스가 설정되기도 함-->
+    <input type="week">             <!-- 주와 연도를 선택-->
+    <input type="number" min="숫자" max="숫자" value="숫자">                         <!-- 입력값을 숫자로 인식한다. 브라우저에 따라 스핀박스가 설정되기도 함-->
     <input type="range" min="숫자" max="숫자" step="숫자" value="초기값">            <!-- 슬라이드 막대로 숫자 지정, min: default는 0, max: defualt는 100, step: default는 1, 숫자 간격을 지정-->
-    <input type="radio" name="텍스트" value="영문, 숫자" checked>            <!-- *하나만 선택할 때, name: 구분하기 위한 이름, value: 서버로 알려줄 때 넘길 값을 지정, 필수 속성이고 영문 or 숫자이어야 함, *checked: 기본으로 선택해 놓을 항목이 있을 때 사용-->
-    <input type="checkbox" name="텍스트" value="영문, 숫자" checked>         <!-- *여러 개 선택할 때, name: 구분하기 위한 이름, value: 서버로 알려줄 때 넘길 값을 지정, 필수 속성이고 영문 or 숫자이어야 함, checked: 기본으로 선택해 놓을 항목이 있을 때 사용-->     
+    <input type="radio" name="텍스트" value="영문, 숫자" checked>                    <!-- **하나만 선택할 때, name: 구분하기 위한 이름, value: 서버로 알려줄 때 넘길 값을 지정, 필수 속성이고 영문 or 숫자이어야 함, **checked: 기본으로 선택해 놓을 항목이 있을 때 사용-->
+    <input type="checkbox" name="텍스트" value="영문, 숫자" checked>                 <!-- **여러 개 선택할 때, name: 구분하기 위한 이름, value: 서버로 알려줄 때 넘길 값을 지정, 필수 속성이고 영문 or 숫자이어야 함, checked: 기본으로 선택해 놓을 항목이 있을 때 사용-->     
     <input type="color" value="#00ff00(이렇게)">            <!-- 색상 선택 상자 표시, 색상 값은 16진수로 표시-->
-    <input type="submit" value="버튼내용">           <!-- *서버에 전송 버튼-->
+    <input type="submit" value="버튼내용">           <!-- **서버에 전송 버튼-->
     <input type="reset" value="버튼내용">            <!-- 리셋버튼 만들기-->
     <input type="image" src="경로" alt="대체 텍스트" height="숫자" width="숫자">            <!-- 이미지 버튼 넣기, 원하는 이미지의 버튼을 만들 수 있다! -->
     <!-- 예시-->    <input type="image" id="butt" src="경로" alt="login">     
     <input type="button" value="버튼 내용" onclick="">           <!-- 버튼 넣기-->
-    <input type="file" multiple>         <!-- 파일 첨부하기-->
+    <input type="file" multiple>         <!-- **파일 첨부하기-->
     
-    <input type="" autofocus required>       <!-- autofocus 속성: 입력 커서 표시하기-->
-    <input type="" placeholder="텍스트">       <!-- *placeholder 속성: 입력란에는 적당한 힌트 내용을 표시!-->
+    <input type="" autofocus required>       <!-- **autofocus 속성: 입력 커서 표시하기-->
+    <input type="" placeholder="텍스트">       <!-- **placeholder 속성: 입력란에는 적당한 힌트 내용을 표시!-->
     <input type="" readonly>      
     <input type="" readonly="readonly">
     <input type="" readonly="true">       <!-- readonly 속성: 읽기 전용 필드 만들기, 사용자가 내용을 건들 수 없음-->
@@ -449,12 +449,12 @@ FTP(File Transfer Protoocol) 프로그램: 서버에 파일을 올리고 내릴 
 
 <!-- 시맨틱 태그: 이름만 보고도 문서 구조에서 어떤 역할을 하는지 이해할 수 있는 태그!-->
 <header> </header>          <!-- 머리말 지정하기
-                                 *주로 <form> 태그로 검색 창을 넣거나, <nav> 태그로 사이트 메뉴를 넣는다.-->
+                                 **주로 <form> 태그로 검색 창을 넣거나, <nav> 태그로 사이트 메뉴를 넣는다.-->
 <nav> </nav>                <!-- 문서를 연결하는 내비게이션 링크-->
 <section> </section>        <!-- 주제별 콘텐츠 영역 나타내기-->
 <article> </article>        <!-- 콘텐츠 내용 넣기-->
 <aside> </aside>            <!-- 본문 이외의 내용 표시하기-->
-<iframe> </iframe>          <!-- 외무 문서 삽입하기
+<iframe> </iframe>          <!-- 외부 문서 삽입하기
                                  width: 인라인 프레임의 너비. px or %
                                  height: 인라인 프레임의 높이. px or %
                                  name: 인라인 프레음의 이름
