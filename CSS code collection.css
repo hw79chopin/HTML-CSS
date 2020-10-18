@@ -75,8 +75,7 @@ h1, h2 {
     font-family: 'Nanum Gothic', 돋움;          /* 웹 폰트를 적용하는 방법! 위의 @import와 같이 사용해야 함, 주소 밑에 [Specify in CSS]에 폰트 이름을 그대로 가져와야 함*/
     /* @font-face { 
         font-family: 글꼴 이름;
-        src:url(글꼴 파일 경로) format(파일 유형);
-    }                                           웹 폰트 업로드해서 적용하기 */
+        src:url(글꼴 파일 경로) format(파일 유형);}         웹 폰트 업로드해서 적용하기 */
     font-size: 5%;        /* 글자 크기 조절하기
             절대크기: 브라우저에서 지정한 글자 크기, [xx-small | x-small | small | medium | large | x-large | xx-large] 사용가능
             상대크기: 부모 요소의 font-size를 기준으로 표시. [larger | smaller] 사용 가능
@@ -95,16 +94,16 @@ h1, h2 {
         menu: 드롭다운 메뉴에 어울리는 글꼴 스타일 지정
         message-box: 대화상자에 어울리는 글꼴 스타일 지정 
         status-bar: 상태 표시줄에 어울리는 글꼴 스타일 지정*/
-    font-feature-settings: normal;      /* 오픈 타입 글꼴 세부 설정을 조절 */
+    font-feature-settings: normal;       /* 오픈 타입 글꼴 세부 설정을 조절 */
     font-language-override: normal;      /* lang 속성 언어를 덮어쓸 다른 언어를 지정  */
-    font-kerning: normal;              /* 각 글자 사이의 간격 조절을 지정 (i 같은 글자를 위해) */
-    font-variant-alternates: normal;      /* 기본 글꼴 외 다른 형태로 표시하는 기능을 지정 */
+    font-kerning: normal;                /* 각 글자 사이의 간격 조절을 지정 (i 같은 글자를 위해) */
+    font-variant-alternates: normal;     /* 기본 글꼴 외 다른 형태로 표시하는 기능을 지정 */
     font-variant-ligatures: normal;      /* 글자를 더 보기 좋게 만드는 기능을 지정 */
-    font-variant-position: normal;      /* 글꼴의 위 첨자, 아래 첨자를 사용 */
-    font-variant-caps: normal;      /* 글자의 대문자 형태를 지정 */
-    font-variant-numeric: normal;      /* 글자의 숫자 스타일을 지정 */
-    font-variant-east-asian: normal;      /* 동아시아 문자의 표현 방식을 지정 */
-    font-synthesis: none;         /* '굵게', '기울임'이 포함되지 않은 글꼴을 합성해 표시할지를 지정 */
+    font-variant-position: normal;       /* 글꼴의 위 첨자, 아래 첨자를 사용 */
+    font-variant-caps: normal;           /* 글자의 대문자 형태를 지정 */
+    font-variant-numeric: normal;        /* 글자의 숫자 스타일을 지정 */
+    font-variant-east-asian: normal;     /* 동아시아 문자의 표현 방식을 지정 */
+    font-synthesis: none;                /* '굵게', '기울임'이 포함되지 않은 글꼴을 합성해 표시할지를 지정 */
 }
 
 /* 텍스트 관련 스타일 */
@@ -121,8 +120,8 @@ h1, h2 {
                                        pre: 여러 개 공백을 그대로 표시
                                        pre-line: 여러 개 공백을 하나로 표시, 영역 너비를 넘어가는 내용은 자동으로 줄 바꿈
                                        pre-wrap: 여러 개 공백을 그대로 표시, 영역 너비를 넘어가는 내용은 자동으로 줄 바꿈 */
-    letter-spacing: normal;         /* 텍스트 간격(낱 글자 사이 간격) 조절, em단위로 지정 要*/
-    word-spacing: normal;           /* 텍스트 간격(단어와 단어 사이 간격) 조절, em단위로 지정 要 */
+    letter-spacing: normal;         /* 텍스트 간격(낱 글자 사이 간격) 조절, **em단위로 지정 要*/
+    word-spacing: normal;           /* 텍스트 간격(단어와 단어 사이 간격) 조절, **em단위로 지정 要 */
     direction: ltr;             /* 글자 쓰기 방향 지정하기
                                     ltr: 기본값. 왼쪽에서 오른쪽. 
                                     rtl: 오른쪽에서 왼쪽 */
@@ -158,7 +157,7 @@ h1, h2 {
                                         upper-alpha / upper-latin: 대문자 알파벳
                                         armenian: 아르메니아 숫자
                                         georgian: 조지 왕조시대의 숫자 */
-    list-style-image: none;             /* **불릿 대신 이미지 넣기. [none | url( ' ' )] */
+    list-style-image: none;             /* ***불릿 대신 이미지 넣기. [none | url( ' ' )] */
     list-style-position: inside;        /* 목록에 들여 쓰는 효과 [inside, outside] 
                                             inside: 불릿이나 숫자를 안쪽으로 들여 씀
                                             outside: 기본값, 밖으로 내어 씁니다.*/
@@ -222,7 +221,7 @@ span {
 
 
 /* CSS 박스 모델 
-# **박스 모델이란? 웹 문서의 내용을 박스 형태로 정의하는 방법!
+# **박스 모델이란? 웹 문서의 내용을 "박스 형태로 정의"하는 방법!
 - 블록 레벨요소: 혼자 한 줄을 차지. 너비가 100%. <div> <p>가 대표적
 - 인라인 레벨요소: 한 줄에 여러 개의 레벨 요소를 표시 가능. <img> <strong>가 대표적
 - 패딩: 테두리와 내용 사이의 여백
@@ -264,12 +263,12 @@ span {
                                  outset: border-collapse:collapse이면 ridge와 같고, seperate이면 창에서 튀어나온 것처럼 표시
                                  ridge: 테두리를 창에서 튀어나온 것처럼 표시 */
     border-width: 5px 10px 15px 20px;          /* [위 | 오른쪽 | 밑 | 왼쪽] 순서 */
-    border-width: thick thin;          /* [위 | 오른쪽 | 밑 | 왼쪽] 순서로 돌아감~ thin < medium < think 순서  */
-    border-color: red;               /* [위 | 오른쪽 | 밑 | 왼쪽] 순서 */
-    border-top: 2px;                 /* 위쪽 테두리만 따로 지정 */
-    border-bottom: 2px;              /* 아래쪽 테두리만 따로 지정 */
-    border-left: 2px;                /* 왼쪽 테두리만 따로 지정 */
-    border-right: 2px;               /* 오른쪽 테두리만 따로 지정 */
+    border-width: thick thin;                  /* [위 | 오른쪽 | 밑 | 왼쪽] 순서로 돌아감~ thin < medium < think 순서  */
+    border-color: red;                       /* [위 | 오른쪽 | 밑 | 왼쪽] 순서 */
+    border-top: 2px;                           /* 위쪽 테두리만 따로 지정 */
+    border-bottom: 2px;                        /* 아래쪽 테두리만 따로 지정 */
+    border-left: 2px;                          /* 왼쪽 테두리만 따로 지정 */
+    border-right: 2px;                         /* 오른쪽 테두리만 따로 지정 */
 
     border-radius: 30%;              /* 박스 모서리 둥글게 만들기. [크기 | 백분율] */
     border-top-left-radius: 20%;
@@ -301,10 +300,10 @@ span {
 
 /* CSS 포지셔닝 */
 .position {
-    box-sizing: border-box;                 /* **콘텐츠 영역의 너비 + 패딩 + 테두리까지 합친 width 속성지정가능. [content-box | border-box] 
+    box-sizing: border-box;                 /* ****콘텐츠 영역의 너비 + 패딩 + 테두리까지 합친 width 속성지정가능. [content-box | border-box] 
                                                content-box: default. width = 콘텐츠 영역 너비 
                                                border-box: width = 콘텐츠 영역 + 테두리 포함
-                                               여러 박스 모델을 화면에 배치하려면 박스 모델의 너비값을 정확히 계산해야 함*/
+                                               여러 박스 모델을 화면에 배치하려면 박스 모델의 너비값을 정확히 계산해야 함 */
     float: left;                            /* **왼쪽 or 오른쪽에 배치하기
                                                float 속성을 사용하면 그 주변을 다른 요소가 감쌈
                                                [left | right | none] */
@@ -340,7 +339,7 @@ span {
                                                       단의 너비 같은 속성에 따라 단의 개수가 자동 계산*/
     column-gap: normal;                           /* 단과 단 사이 여백 지정. [크기 | normal]  */
     column-rule: thin solid  #000;              /* 구분선의 색상, 스타일, 너비 지정 [너비 | 스타일 | 색상]*/
-    column-rule-color:  #000;                   /* [색상]*/
+    column-rule-color:  #000;                   /* [색상] */
     column-rule-style:  #000;                   /* [none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset]*/
     column-rule-width:  #000;                   /* [크기 | thin | medium | thick]*/
     break-after: column;              /* 특정 요소 뒤에서 단을 나눔
@@ -351,8 +350,9 @@ span {
     break-inside: column;              /* 특정 요소 안에서 단을 나눔 [column | avoid-column] */
     column-span: all;                  /* 여러 단을 하나로 합치기 [1 | all] 
                                           1: default. 단을 합치지 않는 것
-                                        all: 전체 단을 하나로 합침. 일부만 합칠 수는 없다. */
+                                          all: 전체 단을 하나로 합침. 일부만 합칠 수는 없다. */
 }
+
 
 
 /* 표 스타일 */
@@ -394,7 +394,7 @@ span {
 selector1 selector2  {}                 /* 지정한 모든 하위 요소에 스타일 적용하기 */
 parent > child {}                       /* **자식 요소에만 스타일 적용하기. 손자 요소에는 스타일이 적용되지 않는다 */
 selector + selector {}                  /* 가장 가까운 형제 요소에 스타일 적용하기 */
-selector ~ selector {}                  /* 형제 요소에 스타일 적용하기 */
+selector ~ selector {}                  /* **형제 요소에 스타일 적용하기 */
 
 
 
@@ -422,13 +422,14 @@ a[href $= 'hwp'] {padding: 2px;}                     /* 특정 값으로 끝나�
 :root                   /* 문서 전체에 적용하기 */
 :nth-child(n)    :nth-last-child(n)             /* 자식 요소의 위치에 따라 스타일 적용하기. 주로 메뉴 항목에 이 선택자를 빈용 */
 :nth-of-type(n)  :nth-last-of-type(n)           /* 특정 태그 위치에 스타일 적용하기 */
-:first-child     :last-child                    /* 첫 번째, 마지막 요소에 스타일 적용하기 */
+:first-child     :last-child                    /* **첫 번째, 마지막 요소에 스타일 적용하기 */
 :first-of-type   :last-of-type                  /* 형제 관계 요소의 위치에 따라 스타일 적용하기*/ 
 :only-child      :only-of-type                  /* 하나뿐인 자식 요소에 스타일 적용하기*/ 
 :target                                         /* 앵커 목적지에 스타일 적용하기*/ 
 :not(#ex)                                       /* 특정 요소가 아닐 때 스타일 적용하기*/ 
 ::first-line     ::first-letter                 /* 첫 번째 줄, 첫 번째 글자에 스타일 적용하기 */ 
 ::before         ::after                        /* 내용 앞뒤에 콘텐츠 추가하기*/ 
+
 
 
 /* 변형 */
@@ -459,7 +460,7 @@ a[href $= 'hwp'] {padding: 2px;}                     /* 특정 값으로 끝나�
     transform-style: flat;                      /* 3D 변형 적용하기 [flat | preserve-3d] */
     backface-visibility: hidden;                /* 요소의 뒷면 표시하기 [visible | hidden] */
 
-    transition-duration: 0s;                    /* 트랜지션 진행 시간 설정하기 */
+    transition-duration: 0s;                    /* **트랜지션 진행 시간 설정하기 */
     transition-property: all;                   /* 트랜지션 대상 설정 [all | none | background-color | width, height 등등] */
     transition-timing-function: func();         /* 속도 곡선 지정하기 [linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier(n,n,n,n)]
                                                                      linear: 똑같은 속도로 트랜지션 진행
@@ -469,7 +470,7 @@ a[href $= 'hwp'] {padding: 2px;}                     /* 특정 값으로 끝나�
                                                                      ease-in-out: 느리게 시작하고 느리게 끝냄
                                                                      cubic-bezier(n,n,n,n): 베지에 함수에 직접 정의해 사용 */
     transition-delay: 0s;                       /* 지연시간 설정하기 */
-    transition: background 1s;                     /* transition 속성 한 번에 적용하기. property, duration, timing-function, delay 등을 지정가능 */
+    transition: background 1s;                  /* ** transition 속성 한 번에 적용하기. property, duration, timing-function, delay 등을 지정가능 */
 }
 
 /* 반응형 웹 */
