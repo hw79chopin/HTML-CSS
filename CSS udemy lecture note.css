@@ -1,0 +1,13 @@
+/* 
+# Section 2
+ * 14강. 15강
+  - CSS를 입력하는 방법
+    - inline: HTML style property 
+    - style tag: <head> 태그 사이에 넣는다.
+      section { }: 태그 이름을 지정
+      .className {}: class 이름으로 스타일 지정
+    - <link rel="stylesheet" href="파일명.css">: 이렇게 넣을 수 있다.
+
+ * 
+
+*/
