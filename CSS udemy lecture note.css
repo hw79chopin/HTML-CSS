@@ -4,10 +4,24 @@
   - CSS를 입력하는 방법
     - inline: HTML style property 
     - style tag: <head> 태그 사이에 넣는다.
-      section { }: 태그 이름을 지정
+    - section { }: 태그 이름을 지정
       .className {}: class 이름으로 스타일 지정
     - <link rel="stylesheet" href="파일명.css">: 이렇게 넣을 수 있다.
 
- * 
+ * 17강 (CSS를 적용하는 단위)
+  - tag selector
+  - class selector (.class-name)
+  - universal selector (*): 거의 안 씀
+  - id selector (#id-name): 1개만 고를 수 있음
+  - attributes selector: [disabled] selector
 
+ * 18강 (cascading)
+  - multiple rules in element
+  - different priorities
+  - 우선순위: Tag < .class, :pseudo-class, [attribute] < #id < inline styles
+
+ * 20강 (Combinators)
+  - combinator에 multiple selector를 적용할 수 있다.
+
+ * 21강 
 */
