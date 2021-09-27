@@ -12,7 +12,7 @@
   - tag selector
   - class selector (.class-name)
   - universal selector (*): 거의 안 씀
-  - id selector (#id-name): 1개만 고를 수 있음
+  - id selector (#id-name): 1개만 고를 수 있음00
   - attributes selector: [disabled] selector
 
  * 18강 (cascading)
@@ -33,11 +33,54 @@
   - Descendant: 띄어쓰기 
   예시) div p { }
   
-  * 25강
+  * 26강
+   - box model => box로 모든 CSS가 인식된다. 
+   - block level, inline
+
+  * 28강 (margin)
+   - body에 margin이 default로 있다.
+   - Margin Collapsing: margin과 margin이 겹치는 현상, 더 큰 margin이 이긴다.
+
+  * 30강
+   - shorthand properties: 예를 들어 border에 관련된 모든 property를 합치는 것
+
+  * 32강 (width, height)
+   - width: 300px, 50% etc~diving-deeper-04-styling-anchor-tags-finished
+   - height: parent container에 height 만큼 차지할 수 있다. relative height을 물려받는다.
+
+  * 33강 
+   - content-box: box의 크기를 고려해서 height, width, padding, margin을 정해줘야 한다.
+   - box-sizing: border-box; content-box; 이렇게 바꿔줄 수 있다.
+   - border-box이 유용하다! => content와 padding, border를 포함해서 width를 설정해준다.
+   - border-box 세팅하면 content + padding + border = width이 된다.
+   - padding, border가 계산에 포함되도록 만들기!
+
+  * 35강 (Display)
+   - display: block, inline, none으로 설정해줄 수 있다.
+   - display: inline-block이 제일 유용하다. 옆으로 나열이 되지만 block level처럼 작동된다.
+
+  * 38강
+   - CSS function
+     width: calc(100% - 49px); 이런 식으로 뺄 수 있음
+
+  * 39강
+   - <nav>와 <div>의 사이의 공백도 고려해줘야 한다.
+  
+  * 40강 (정렬하기)
+   - vertical-align: middle; 
+
+  * 42강 (pseudo-class)
+   - hover, active 등이 있다.
+
+  * 43강
+   - pseudo-class: specific state
+   - pseudo-element: specific part
+
+  * 44강
+   - ,를 통해서 grouping을 할 수 있다.
+
+  * 45강
    - 
-
-
-
 
 
 
@@ -52,6 +95,11 @@
 
 
 
+  *
+   - 
+
+
+
 
 
 
@@ -63,6 +111,11 @@
 
 
 
+  *
+   - 
+
+
+
 
 
 
@@ -74,29 +127,72 @@
 
 
 
+  *
+   - 
 
 
 
 
 
 
+  *
+   - 
 
 
 
 
 
 
+  *
+   - 
 
 
 
 
 
 
+  *
+   - 
 
 
 
 
 
+
+  *
+   - 
+
+
+
+
+
+
+  *
+   - 
+
+
+
+
+
+
+  *
+   - 
+
+
+
+
+
+
+  *
+   - 
+
+
+
+
+
+
+  *
+   - 
 
 
 
